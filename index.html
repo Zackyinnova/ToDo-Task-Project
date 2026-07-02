@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    anton: ["Anton", "sans-serif"],
+                    archivo: ["Archivo Narrow", "sans-serif"],
+                    space: ["Space Mono", "monospace"],
+                }
+            }
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/Static/css/style.css">
+</head>
+<body class="bg-[#fff9ed] font-archivo min-h-screen  ">
+
+    <header class="w-full sticky top-0  border-b-4 border-black bg-[#FFF9ED] py-4 px-5">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 lg:px-12 py-4 ">
+
+            <!--Left Navbar-->
+            <div class=" bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000]">
+                <P class="font-anton text-[24px] text-bold">Taskr</P>
+            </div>
+
+
+            <!--Middle navbar-->
+            <div class="hidden md:flex flex flex-row gap-8">
+
+                <a class="text-[16px] text-[#6D5E00] font-bold border-b-4 border-[#6D5E00] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" 
+                    href="">
+                    Tasks
+                </a>
+
+                <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " 
+                    href="">
+                    Stats
+                </a>
+
+                <a  class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " href="">
+                    Categories
+                </a>
+
+                <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " href="">
+                    Archive
+                </a>
+            </div>
+
+            <!--Right navbar-->
+            <div class="hidden md:flex bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000] brutal-btn-hover brutal-btn-active transition-all">
+                <P class="font-anton ">ADD TASK</P>
+            </div>
+        </nav>
+    </header>
+    
+</body>
+</html>

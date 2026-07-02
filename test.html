@@ -183,104 +183,109 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-    <!-- Sidebar: Filters -->
-    <aside class="md:col-span-3 space-y-8">
-    <div>
-    <h3 class="font-headline-md text-headline-md uppercase mb-4">Quick Filters</h3>
-    <div class="space-y-4">
-    <div>
-    <p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">PRIORITY</p>
-    <div class="flex flex-wrap gap-2">
-    <button class="bg-primary-container neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">High</button>
-    <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Med</button>
-    <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Low</button>
-    </div>
-    </div>
-    <div>
-    <p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">CATEGORIES</p>
-    <div class="flex flex-wrap gap-2">
-    <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">All</button>
-    <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Work</button>
-    <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Personal</button>
-    <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Health</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    <!-- Productivity Insight -->
-    <div class="bg-surface-container-high neo-border neo-shadow p-6">
-    <h4 class="font-headline-md text-headline-md uppercase mb-2">Productivity Insight</h4>
-    <p class="font-body-md text-body-md mb-4 text-on-surface-variant">Mission completion is at 68% for this sprint. Accelerate operations.</p>
-    <div class="w-full h-8 neo-border bg-white overflow-hidden">
-    <div class="bg-primary-container h-full w-[68%]" style="width: 68%;"></div>
-    </div>
-    <div class="flex justify-between mt-2 font-label-sm text-label-sm">
-    <span>68% COMPLETE</span>
-    <span>12 TO GO</span>
-    </div>
-    </div>
-    </aside>
-    <!-- Task List -->
-    <div class="md:col-span-9 space-y-6">
-    <!-- Task Card 1 -->
-    <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
-    <input checked="" class="chunky-checkbox flex-shrink-0" type="checkbox"/>
-    <div class="flex-grow space-y-2">
-    <div class="flex flex-wrap gap-2 items-center">
-    <span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
-    <span class="bg-[#ffdad6] text-error neo-border-thin px-2 py-0.5 font-label-sm text-label-sm flex items-center gap-1">
-    <span class="material-symbols-outlined text-[14px]">priority_high</span>URGENT
-                                </span>
-    </div>
-    <h3 class="font-headline-md text-headline-md uppercase leading-tight line-through opacity-50">FINALIZE Q4 STRATEGY DECK</h3>
-    <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-    <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: TODAY, 17:00
-                            </p>
-    </div>
-    <div class="flex gap-3 w-full sm:w-auto">
-    <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
-    <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
-    </div>
-    </div>
-    <!-- Task Card 2 -->
-    <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
-    <input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
-    <div class="flex-grow space-y-2">
-    <div class="flex flex-wrap gap-2 items-center">
-    <span class="bg-primary-container neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">PERSONAL</span>
-    </div>
-    <h3 class="font-headline-md text-headline-md uppercase leading-tight">MEND PHYSICAL HARDWARE GEAR</h3>
-    <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-    <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 24
-                            </p>
-    </div>
-    <div class="flex gap-3 w-full sm:w-auto">
-    <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
-    <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
-    </div>
-    </div>
-    <!-- Task Card 3 -->
-    <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
-    <input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
-    <div class="flex-grow space-y-2">
-    <div class="flex flex-wrap gap-2 items-center">
-    <span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
-    </div>
-    <h3 class="font-headline-md text-headline-md uppercase leading-tight">API INFRASTRUCTURE AUDIT</h3>
-    <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-    <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 26
-                            </p>
-    </div>
-    <div class="flex gap-3 w-full sm:w-auto">
-    <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
-    <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
-    </div>
-    </div>
-    <!-- Empty State Placeholder / "Add" Block -->
-    <button class="w-full bg-surface-container neo-border border-dashed py-8 font-headline-md text-headline-md uppercase text-on-surface-variant hover:bg-white transition-all">
-                        + INITIATE NEW TASK
-                    </button>
-    </div>
+        <!-- Sidebar: Filters -->
+        <aside class="md:col-span-3 space-y-8">
+            <div>
+                <h3 class="font-headline-md text-headline-md uppercase mb-4">Quick Filters</h3>
+                <div class="space-y-4">
+
+                    <div>
+                        <p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">PRIORITY</p>
+                        <div class="flex flex-wrap gap-2">
+                        <button class="bg-primary-container neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">High</button>
+                        <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Med</button>
+                        <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Low</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        
+                        <p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">CATEGORIES</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">All</button>
+                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Work</button>
+                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Personal</button>
+                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Health</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Productivity Insight -->
+            <div class="bg-surface-container-high neo-border neo-shadow p-6">
+            <h4 class="font-headline-md text-headline-md uppercase mb-2">Productivity Insight</h4>
+            <p class="font-body-md text-body-md mb-4 text-on-surface-variant">Mission completion is at 68% for this sprint. Accelerate operations.</p>
+            <div class="w-full h-8 neo-border bg-white overflow-hidden">
+            <div class="bg-primary-container h-full w-[68%]" style="width: 68%;"></div>
+            </div>
+            <div class="flex justify-between mt-2 font-label-sm text-label-sm">
+            <span>68% COMPLETE</span>
+            <span>12 TO GO</span>
+            </div>
+            </div>
+        </aside>
+
+        <!-- Task List -->
+        <div class="md:col-span-9 space-y-6">
+
+            <!-- Task Card 1 -->
+            <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
+            <input checked="" class="chunky-checkbox flex-shrink-0" type="checkbox"/>
+            <div class="flex-grow space-y-2">
+            <div class="flex flex-wrap gap-2 items-center">
+            <span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
+            <span class="bg-[#ffdad6] text-error neo-border-thin px-2 py-0.5 font-label-sm text-label-sm flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">priority_high</span>URGENT
+                                        </span>
+            </div>
+            <h3 class="font-headline-md text-headline-md uppercase leading-tight line-through opacity-50">FINALIZE Q4 STRATEGY DECK</h3>
+            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: TODAY, 17:00
+                                    </p>
+            </div>
+            <div class="flex gap-3 w-full sm:w-auto">
+            <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
+            <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
+            </div>
+            </div>
+
+            <!-- Task Card 2 -->
+            <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
+            <input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
+            <div class="flex-grow space-y-2">
+            <div class="flex flex-wrap gap-2 items-center">
+            <span class="bg-primary-container neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">PERSONAL</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md uppercase leading-tight">MEND PHYSICAL HARDWARE GEAR</h3>
+            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 24
+                                    </p>
+            </div>
+            <div class="flex gap-3 w-full sm:w-auto">
+            <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
+            <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
+            </div>
+            </div>
+            <!-- Task Card 3 -->
+            <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
+            <input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
+            <div class="flex-grow space-y-2">
+            <div class="flex flex-wrap gap-2 items-center">
+            <span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md uppercase leading-tight">API INFRASTRUCTURE AUDIT</h3>
+            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 26
+                                    </p>
+            </div>
+            <div class="flex gap-3 w-full sm:w-auto">
+            <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
+            <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
+            </div>
+            </div>
+            
+        </div>
     </div>
 </main>
 

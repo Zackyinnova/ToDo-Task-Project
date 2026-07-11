@@ -31,3 +31,16 @@ buttonGroups.forEach((group) => {
         });
     });
 });
+
+const btnAddTask = document.getElementById("btn-addtask");
+const overAddTask = document.getElementById("overlay-addtask");
+
+btnAddTask.addEventListener("click", () =>{
+    overAddTask.style.display = "flex";
+});
+
+overAddTask.addEventListener("click", (e) =>{
+    if(e.target === overAddTask){
+        overAddTask.style.display = "none";
+    }
+});

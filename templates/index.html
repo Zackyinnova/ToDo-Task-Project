@@ -62,7 +62,7 @@
             </div>
 
             <!--Right navbar-->
-            <div class="hidden md:flex bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000] brutal-btn-hover brutal-btn-active transition-all">
+            <div id="btn-addtask" class="hidden md:flex bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000] brutal-btn-hover brutal-btn-active transition-all">
                 <P class="font-anton ">ADD TASK</P>
             </div>
         </nav>
@@ -284,8 +284,8 @@
     </footer>
 
     <!--Overlay add task-->
-    <div class="bg-black/55 w-full h-full fixed top-0 p-20 flex justify-center items-center">
-        <div class="border-2 flex flex-col gap-8 border-black bg-[#FFF9ED] w-[46%] p-8 text-10 font-anton ">
+    <div id="overlay-addtask" class="hidden bg-black/55 w-full h-full fixed top-0 p-20 justify-center items-center">
+        <div class="border-4 flex flex-col gap-8 border-black bg-[#FFF9ED] w-[46%] p-8 text-10 font-anton shadow-[4px_4px_0px_0px_#000] ">
 
             <div class=" w-full">
                 <P class="uppercase text-[40px]">New Mission objective</P>

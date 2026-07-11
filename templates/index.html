@@ -245,22 +245,6 @@
 
     </main>
 
-    <!--Overlay add task-->
-    <div class="bg-black/55 w-full h-full fixed top-0 p-20">
-        <div class="border-2 border-black bg-[#FFF9ED] p-8 text-10 font-anton">
-            <div class="border-2 w-full">
-                <P class="uppercase">New Mission objective</P>
-            </div>
-
-            <form>
-                <div class="">
-                    <label>TASK NAME</label>
-                    <input type="text" placeholder="ENTER MISSION OBJECTIVE...">
-                </div>
-            </form>
-        </div>
-    </div>
-
     <footer class="w-full sticky top-0  border-t-4 border-black bg-[#e9e2cf] py-4">
         <nav class="max-w-7xl mx-auto flex flex-col items-center gap-5 justify-between px-5 md:px-8 lg:px-12 py-4 ">
 
@@ -298,6 +282,97 @@
             </div>
         </nav>
     </footer>
+
+    <!--Overlay add task-->
+    <div class="bg-black/55 w-full h-full fixed top-0 p-20 flex justify-center items-center">
+        <div class="border-2 flex flex-col gap-8 border-black bg-[#FFF9ED] w-[46%] p-8 text-10 font-anton ">
+
+            <div class=" w-full">
+                <P class="uppercase text-[40px]">New Mission objective</P>
+            </div>
+
+            <form class="flex flex-col gap-6">
+                <div class="flex flex-col">
+                    <label class="font-space font-bold">TASK NAME</label>
+                    <input
+                        type="text"
+                        class="border-4 border-black py-4 px-3 text-[24px] focus:border-[#2563EB]  focus:outline-none"
+                        placeholder="ENTER MISSION OBJECTIVE..."
+                    >
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="font-space font-bold">Due Date</label>
+                    <input
+                        type="date"
+                        class="border-4 font-archivo uppercase border-black py-4 px-3 text-[16px] focus:border-[#2563EB]  focus:outline-none"
+                    >
+                </div>
+
+                <div class="flex flex-row gap-6">
+                    <div class="w-full">
+                        <label class="font-space font-bold text-[14px] uppercase">
+                            Category
+                        </label>
+
+                        <div class="button-group mt-2 flex flex-row gap-4">
+                            <button
+                                type="button"
+                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                            >
+                                High
+                            </button>
+
+                            <button
+                                type="button"
+                                class=" uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                            >
+                                Med
+                            </button>
+
+                            <button
+                                type="button"
+                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                            >
+                                Low
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="w-full">
+                        <label class="font-space font-bold text-[14px] uppercase">
+                            Priority
+                        </label>
+
+                        <div class="button-group mt-2 flex flex-row gap-4">
+                            <button
+                                type="button"
+                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                            >
+                                Work
+                            </button>
+
+                            <button
+                                type="button"
+                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                            >
+                                Personal
+                            </button>
+
+                            <button
+                                type="button"
+                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                            >
+                                Health
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <button class="bg-[#FFDD00] border-4 border-black py-4 text-[24px] shadow-[4px_4px_0px_0px_#000] hover:translate-y-[-2px] transition-transform brutal-btn-hover">INITIATE TASK</button>
+        </div>
+    </div>
 
     
     <script src="/Static/js/script.js"></script>

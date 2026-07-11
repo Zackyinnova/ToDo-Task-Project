@@ -11,3 +11,23 @@ document.querySelectorAll('aside button').forEach(btn => {
         this.classList.add('bg-[#FFDD00]');
         });
 });
+
+//form button toggle
+
+const buttonGroups = document.querySelectorAll(".button-group");
+
+buttonGroups.forEach((group) => {
+    const buttons = group.querySelectorAll(".toggle-button");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            buttons.forEach((item) => {
+                item.classList.remove("bg-[#FFDD00]");
+                item.classList.add("bg-white");
+            });
+
+            button.classList.remove("bg-white");
+            button.classList.add("bg-[#FFDD00]");
+        });
+    });
+});

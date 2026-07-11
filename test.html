@@ -5,9 +5,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>TASKR - Tasks</title>
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=Archivo+Narrow:wght@100..900&family=Space+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&amp;family=Archivo+Narrow:wght@100..900&amp;family=Space+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -154,157 +154,173 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
-    <!-- TopNavBar -->
-    <header class="w-full top-0 sticky z-50 bg-background border-b-4 border-black">
-        <div class="flex justify-between items-center w-full px-margin py-gutter max-w-container-max mx-auto">
-        <div class="font-headline-lg text-headline-lg uppercase tracking-tighter text-on-surface bg-primary-container px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000000]">
-                        TASKR
-                    </div>
-        <nav class="hidden md:flex gap-8">
-        <a class="text-on-surface border-b-4 border-primary font-bold font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Tasks</a>
-        <a class="text-on-surface-variant font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Stats</a>
-        <a class="text-on-surface-variant font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Calendar</a>
-        <a class="text-on-surface-variant font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Archive</a>
-        </nav>
-        <div class="flex items-center gap-4">
-        <button class="material-symbols-outlined p-2 hover:bg-surface-container-high transition-colors">dark_mode</button>
-        <button class="hidden md:block bg-primary-container neo-border neo-shadow-sm px-6 py-2 font-headline-md text-headline-md uppercase brutal-btn-hover brutal-btn-active transition-all">
-                            Add Task
-                        </button>
-        </div>
-        </div>
-    </header>
-
-<main class="flex-grow border-10 max-w-container-max mx-auto w-full px-margin py-12">
-    <!-- Header Section -->
-    <div class="mb-12">
-    <h1 class="font-headline-xl text-headline-xl uppercase">Tasks.</h1>
-    <p class="font-label-sm text-label-sm uppercase bg-black text-white inline-block px-4 py-1 mt-2">Your Active Mission.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-        <!-- Sidebar: Filters -->
-        <aside class="md:col-span-3 space-y-8">
-            <div>
-                <h3 class="font-headline-md text-headline-md uppercase mb-4">Quick Filters</h3>
-                <div class="space-y-4">
-
-                    <div>
-                        <p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">PRIORITY</p>
-                        <div class="flex flex-wrap gap-2">
-                        <button class="bg-primary-container neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">High</button>
-                        <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Med</button>
-                        <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Low</button>
-                        </div>
-                    </div>
-
-                    <div>
-                        
-                        <p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">CATEGORIES</p>
-                        <div class="flex flex-wrap gap-2">
-                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">All</button>
-                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Work</button>
-                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Personal</button>
-                            <button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Health</button>
-                        </div>
-                    </div>
-
-                </div>
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-background border-b-4 border-black">
+<div class="flex justify-between items-center w-full px-margin py-gutter max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg uppercase tracking-tighter text-on-surface bg-primary-container px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000000]">
+                TASKR
             </div>
-
-            <!-- Productivity Insight -->
-            <div class="bg-surface-container-high neo-border neo-shadow p-6">
-            <h4 class="font-headline-md text-headline-md uppercase mb-2">Productivity Insight</h4>
-            <p class="font-body-md text-body-md mb-4 text-on-surface-variant">Mission completion is at 68% for this sprint. Accelerate operations.</p>
-            <div class="w-full h-8 neo-border bg-white overflow-hidden">
-            <div class="bg-primary-container h-full w-[68%]" style="width: 68%;"></div>
-            </div>
-            <div class="flex justify-between mt-2 font-label-sm text-label-sm">
-            <span>68% COMPLETE</span>
-            <span>12 TO GO</span>
-            </div>
-            </div>
-        </aside>
-
-        <!-- Task List -->
-        <div class="md:col-span-9 space-y-6">
-
-            <!-- Task Card 1 -->
-            <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
-            <input checked="" class="chunky-checkbox flex-shrink-0" type="checkbox"/>
-            <div class="flex-grow space-y-2">
-            <div class="flex flex-wrap gap-2 items-center">
-            <span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
-            <span class="bg-[#ffdad6] text-error neo-border-thin px-2 py-0.5 font-label-sm text-label-sm flex items-center gap-1">
-            <span class="material-symbols-outlined text-[14px]">priority_high</span>URGENT
-                                        </span>
-            </div>
-            <h3 class="font-headline-md text-headline-md uppercase leading-tight line-through opacity-50">FINALIZE Q4 STRATEGY DECK</h3>
-            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-            <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: TODAY, 17:00
-                                    </p>
-            </div>
-            <div class="flex gap-3 w-full sm:w-auto">
-            <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
-            <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
-            </div>
-            </div>
-
-            <!-- Task Card 2 -->
-            <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
-            <input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
-            <div class="flex-grow space-y-2">
-            <div class="flex flex-wrap gap-2 items-center">
-            <span class="bg-primary-container neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">PERSONAL</span>
-            </div>
-            <h3 class="font-headline-md text-headline-md uppercase leading-tight">MEND PHYSICAL HARDWARE GEAR</h3>
-            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-            <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 24
-                                    </p>
-            </div>
-            <div class="flex gap-3 w-full sm:w-auto">
-            <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
-            <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
-            </div>
-            </div>
-            <!-- Task Card 3 -->
-            <div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
-            <input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
-            <div class="flex-grow space-y-2">
-            <div class="flex flex-wrap gap-2 items-center">
-            <span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
-            </div>
-            <h3 class="font-headline-md text-headline-md uppercase leading-tight">API INFRASTRUCTURE AUDIT</h3>
-            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-            <span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 26
-                                    </p>
-            </div>
-            <div class="flex gap-3 w-full sm:w-auto">
-            <button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
-            <button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
-            </div>
-            </div>
-
-        </div>
-    </div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface border-b-4 border-primary font-bold font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Tasks</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Stats</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Calendar</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-high transition-colors">dark_mode</button>
+<button class="hidden md:block bg-primary-container neo-border neo-shadow-sm px-6 py-2 font-headline-md text-headline-md uppercase brutal-btn-hover brutal-btn-active transition-all">
+                    Add Task
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-container-max mx-auto w-full px-margin py-12">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="font-headline-xl text-headline-xl uppercase">Tasks.</h1>
+<p class="font-label-sm text-label-sm uppercase bg-black text-white inline-block px-4 py-1 mt-2">Your Active Mission.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar: Filters -->
+<aside class="md:col-span-3 space-y-8">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Quick Filters</h3>
+<div class="space-y-4">
+<div>
+<p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">PRIORITY</p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary-container neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">High</button>
+<button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Med</button>
+<button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Low</button>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm mb-2 text-on-surface-variant">CATEGORIES</p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">All</button>
+<button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Work</button>
+<button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Personal</button>
+<button class="bg-white neo-border neo-shadow-sm px-3 py-1 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all">Health</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Productivity Insight -->
+<div class="bg-surface-container-high neo-border neo-shadow p-6">
+<h4 class="font-headline-md text-headline-md uppercase mb-2">Productivity Insight</h4>
+<p class="font-body-md text-body-md mb-4 text-on-surface-variant">Mission completion is at 68% for this sprint. Accelerate operations.</p>
+<div class="w-full h-8 neo-border bg-white overflow-hidden">
+<div class="bg-primary-container h-full w-[68%]" style="width: 68%;"></div>
+</div>
+<div class="flex justify-between mt-2 font-label-sm text-label-sm">
+<span class="">68% COMPLETE</span>
+<span class="">12 TO GO</span>
+</div>
+</div>
+</aside>
+<!-- Task List -->
+<div class="md:col-span-9 space-y-6">
+<!-- Task Card 1 -->
+<div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
+<input checked="" class="chunky-checkbox flex-shrink-0" type="checkbox"/>
+<div class="flex-grow space-y-2">
+<div class="flex flex-wrap gap-2 items-center">
+<span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
+<span class="bg-[#ffdad6] text-error neo-border-thin px-2 py-0.5 font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>URGENT
+                            </span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase leading-tight line-through opacity-50">FINALIZE Q4 STRATEGY DECK</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: TODAY, 17:00
+                        </p>
+</div>
+<div class="flex gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
+<button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
+</div>
+</div>
+<!-- Task Card 2 -->
+<div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
+<input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
+<div class="flex-grow space-y-2">
+<div class="flex flex-wrap gap-2 items-center">
+<span class="bg-primary-container neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">PERSONAL</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase leading-tight">MEND PHYSICAL HARDWARE GEAR</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 24
+                        </p>
+</div>
+<div class="flex gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
+<button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
+</div>
+</div>
+<!-- Task Card 3 -->
+<div class="bg-white neo-border neo-shadow p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 group transition-all">
+<input class="chunky-checkbox flex-shrink-0" type="checkbox"/>
+<div class="flex-grow space-y-2">
+<div class="flex flex-wrap gap-2 items-center">
+<span class="bg-[#c6c6ff] neo-border-thin px-2 py-0.5 font-label-sm text-label-sm">WORK</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase leading-tight">API INFRASTRUCTURE AUDIT</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span> DUE: OCT 26
+                        </p>
+</div>
+<div class="flex gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none bg-[#e2e2e2] neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Edit</button>
+<button class="flex-1 sm:flex-none bg-error text-white neo-border neo-shadow-sm px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover brutal-btn-active">Delete</button>
+</div>
+</div>
+<!-- Empty State Placeholder / "Add" Block -->
+<div class="bg-surface-container neo-border neo-shadow p-6 space-y-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm uppercase">Task Name</label>
+<input class="w-full bg-white border-4 border-black p-4 font-headline-md text-headline-md uppercase focus:outline-none focus:bg-white transition-colors" placeholder="ENTER MISSION OBJECTIVE..." type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Priority</p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary-container neo-border-thin px-3 py-1 font-label-sm text-label-sm uppercase">High</button>
+<button class="bg-white neo-border-thin px-3 py-1 font-label-sm text-label-sm uppercase">Med</button>
+<button class="bg-white neo-border-thin px-3 py-1 font-label-sm text-label-sm uppercase">Low</button>
+</div>
+</div>
+<div class="space-y-2">
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Category</p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-white neo-border-thin px-3 py-1 font-label-sm text-label-sm uppercase">Work</button>
+<button class="bg-white neo-border-thin px-3 py-1 font-label-sm text-label-sm uppercase">Personal</button>
+<button class="bg-white neo-border-thin px-3 py-1 font-label-sm text-label-sm uppercase">Health</button>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary-container border-4 border-black shadow-[6px_6px_0px_0px_#000000] py-4 font-headline-md text-headline-md uppercase brutal-btn-hover brutal-btn-active transition-all">
+        CREATE TASK
+    </button>
+</div>
+</div>
+</div>
 </main>
-
 <!-- Footer -->
 <footer class="w-full mt-auto bg-surface-container-highest border-t-4 border-black">
-    <div class="flex flex-col md:flex-row justify-between items-center w-full px-margin py-8 gap-gutter max-w-container-max mx-auto">
-        <div class="font-headline-md text-headline-md text-on-surface uppercase">
-                        TASKR
-                    </div>
-        <div class="font-label-sm text-label-sm uppercase text-on-surface-variant">
-                        © 2024 TASKR - UNYIELDING PRODUCTIVITY
-                    </div>
-        <nav class="flex gap-6">
-        <a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Terms</a>
-        <a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Privacy</a>
-        <a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Github</a>
-        <a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Support</a>
-        </nav>
-    </div>
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin py-8 gap-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-on-surface uppercase">
+                TASKR
+            </div>
+<div class="font-label-sm text-label-sm uppercase text-on-surface-variant">
+                © 2024 TASKR - UNYIELDING PRODUCTIVITY
+            </div>
+<nav class="flex gap-6">
+<a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Terms</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Github</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface hover:underline decoration-4 decoration-primary transition-all duration-100" href="#">Support</a>
+</nav>
+</div>
 </footer>
 <!-- Mobile Action Button (FAB) -->
 <button class="md:hidden fixed bottom-6 right-6 bg-primary-container w-16 h-16 neo-border neo-shadow flex items-center justify-center z-50 brutal-btn-active">
@@ -336,4 +352,40 @@
             });
         });
     </script>
-</body></html>
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" id="add-task-modal">
+<div class="bg-[#fff9ed] neo-border shadow-[10px_10px_0px_0px_#000000] w-full max-w-2xl p-8 relative">
+<button class="absolute top-4 right-4 material-symbols-outlined text-3xl hover:rotate-90 transition-transform" onclick="document.getElementById('add-task-modal').remove()">close</button>
+<h2 class="font-headline-lg text-headline-lg uppercase mb-8">New Mission Objective</h2>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm uppercase">Task Name</label>
+<input class="w-full bg-white border-4 border-black p-4 font-headline-md text-headline-md uppercase focus:outline-none focus:bg-white transition-colors" placeholder="ENTER MISSION OBJECTIVE..." type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm uppercase">Due Date</label>
+<input class="w-full bg-white border-4 border-black p-4 font-body-md uppercase focus:outline-none transition-colors" type="date"/>
+</div>
+<div class="space-y-2">
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Priority</p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-primary-container neo-border-thin px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all" type="button">High</button>
+<button class="bg-white neo-border-thin px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all" type="button">Med</button>
+<button class="bg-white neo-border-thin px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all" type="button">Low</button>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<p class="font-label-sm text-label-sm uppercase text-on-surface-variant">Category</p>
+<div class="flex flex-wrap gap-2">
+<button class="bg-white neo-border-thin px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all" type="button">Work</button>
+<button class="bg-white neo-border-thin px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all" type="button">Personal</button>
+<button class="bg-white neo-border-thin px-4 py-2 font-label-sm text-label-sm uppercase brutal-btn-hover transition-all" type="button">Health</button>
+</div>
+</div>
+<button class="w-full bg-[#FFDD00] border-4 border-black shadow-[6px_6px_0px_0px_#000000] py-6 font-headline-md text-headline-md uppercase brutal-btn-hover brutal-btn-active transition-all mt-4" type="submit">
+                INITIATE TASK
+            </button>
+</form>
+</div>
+</div></body></html>

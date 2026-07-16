@@ -52,7 +52,7 @@ def submitTask():
 
     db.commit()
     cursor.close()
-    return redirect(url_for('testpage'))
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     app.run(debug=True)

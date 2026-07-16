@@ -44,3 +44,23 @@ overAddTask.addEventListener("click", (e) =>{
         overAddTask.style.display = "none";
     }
 });
+
+// Category
+const categoryButtons = document.querySelectorAll(".category-button");
+const categoryInput = document.getElementById("category");
+
+categoryButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        categoryInput.value = button.dataset.value;
+    });
+});
+
+// Priority
+const priorityButtons = document.querySelectorAll(".priority-button");
+const priorityInput = document.getElementById("priority");
+
+priorityButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        priorityInput.value = button.dataset.value;
+    });
+});

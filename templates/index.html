@@ -291,13 +291,14 @@
                 <P class="uppercase text-[40px]">New Mission objective</P>
             </div>
 
-            <form class="flex flex-col gap-6">
+            <form class="flex flex-col gap-6" action="/submitTask" method="POST" >
                 <div class="flex flex-col">
                     <label class="font-space font-bold">TASK NAME</label>
                     <input
                         type="text"
                         class="border-4 border-black py-4 px-3 text-[24px] focus:border-[#2563EB]  focus:outline-none"
                         placeholder="ENTER MISSION OBJECTIVE..."
+                        name="Task"
                     >
                 </div>
 
@@ -306,6 +307,7 @@
                     <input
                         type="date"
                         class="border-4 font-archivo uppercase border-black py-4 px-3 text-[16px] focus:border-[#2563EB]  focus:outline-none"
+                        name="due_date"
                     >
                 </div>
 
@@ -315,24 +317,28 @@
                             Category
                         </label>
 
+                        <input type="hidden" name="category" id="category" value="">
                         <div class="button-group mt-2 flex flex-row gap-4">
                             <button
                                 type="button"
-                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="category-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="High"
                             >
                                 High
                             </button>
 
                             <button
                                 type="button"
-                                class=" uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="category-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="med"
                             >
                                 Med
                             </button>
 
                             <button
                                 type="button"
-                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="category-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="low"
                             >
                                 Low
                             </button>
@@ -344,37 +350,43 @@
                             Priority
                         </label>
 
+                        <input type="hidden" name="priority" id="priority" value="">
                         <div class="button-group mt-2 flex flex-row gap-4">
                             <button
                                 type="button"
-                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="priority-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Study"
+                            >
+                                Study
+                            </button>
+
+                            <button
+                                type="button"
+                                class="priority-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Work"
                             >
                                 Work
                             </button>
 
                             <button
                                 type="button"
-                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="priority-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Personal"
                             >
                                 Personal
-                            </button>
-
-                            <button
-                                type="button"
-                                class="uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
-                            >
-                                Health
                             </button>
                         </div>
                     </div>
                 </div>
-            </form>
 
-            <button class="bg-[#FFDD00] border-4 border-black py-4 text-[24px] shadow-[4px_4px_0px_0px_#000] hover:translate-y-[-2px] transition-transform brutal-btn-hover">INITIATE TASK</button>
+                <button type="submit" class="bg-[#FFDD00] border-4 border-black py-4 text-[24px] shadow-[4px_4px_0px_0px_#000] hover:translate-y-[-2px] transition-transform brutal-btn-hover">
+                    INITIATE TASK
+                </button>
+            </form>
         </div>
     </div>
 
     
-    <script src="/Static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

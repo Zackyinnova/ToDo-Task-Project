@@ -4,6 +4,7 @@ from flask import session
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask import request
 import random
+from datetime import date
 
 app = Flask(__name__)
 
@@ -21,8 +22,25 @@ db = mysql.connector.connect(
 @app.route('/')
 def index():
 
+    cursor = db.cursor(dictionary=True)
+
+    # ambil semua task
+    cursor.execute("""
+        SELECT 
+            Task,
+            due_date,
+            category,
+            priority
+        FROM task
+    """)
+
+    data = cursor.fetchall()
+
+    cursor.close()
+
     return render_template(
         "index.html",
+        data=data
     )
 
 @app.route('/testpage')
@@ -41,6 +59,7 @@ def submitTask():
     category = request.form.get("category")
     priority = request.form.get("priority")
 
+    #input data task
     cursor.execute(
         """
         INSERT INTO task
@@ -51,8 +70,28 @@ def submitTask():
     )
 
     db.commit()
+
+    cursor.execute(
+        """
+        SELECT 
+            Task,
+            due_date,
+            category,
+            priority
+        FROM task
+        WHERE due_date = %s
+        """,
+        (due_date,)
+    )
+
+    data = cursor.fetchall()
+
     cursor.close()
-    return redirect(url_for('index'))
+
+    return render_template(
+        "index.html",
+        data=data
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

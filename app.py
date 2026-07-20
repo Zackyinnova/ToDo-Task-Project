@@ -26,12 +26,9 @@ def index():
 
     # ambil semua task
     cursor.execute("""
-        SELECT 
-            Task,
-            due_date,
-            category,
-            priority
+        SELECT *
         FROM task
+        ORDER BY due_date
     """)
 
     data = cursor.fetchall()
@@ -52,46 +49,23 @@ def testpage():
 
 @app.route('/submitTask', methods=['POST'])
 def submitTask():
-    cursor = db.cursor(dictionary=True)
+    cursor = db.cursor()
 
-    Task = request.form['Task']
+    task = request.form['Task']
     due_date = request.form['due_date']
-    category = request.form.get("category")
-    priority = request.form.get("priority")
+    category = request.form['category']
+    priority = request.form['priority']
 
-    #input data task
-    cursor.execute(
-        """
+    cursor.execute("""
         INSERT INTO task
         (Task, due_date, category, priority)
-        VALUES(%s,%s,%s,%s)
-    """,
-        (Task, due_date,category,priority)
-    )
+        VALUES (%s, %s, %s, %s)
+    """, (task, due_date, category, priority))
 
     db.commit()
-
-    cursor.execute(
-        """
-        SELECT 
-            Task,
-            due_date,
-            category,
-            priority
-        FROM task
-        WHERE due_date = %s
-        """,
-        (due_date,)
-    )
-
-    data = cursor.fetchall()
-
     cursor.close()
 
-    return render_template(
-        "index.html",
-        data=data
-    )
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     app.run(debug=True)

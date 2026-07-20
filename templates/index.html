@@ -68,7 +68,7 @@
         </nav>
     </header>
 
-    <main class="w-full flex flex-col gap-12 py-5">
+    <main class="w-full flex flex-col gap-12 py-5 mb-16">
 
         <!-- Header main -->
         <section>
@@ -139,7 +139,7 @@
                  </aside>
 
                 <!-- Task list -->
-                 <div class="flex flex-col md:w-full gap-5">
+                <div class="flex flex-col md:w-full gap-5 pr-6 max-h-[40vh] overflow-auto ">
 
                     {% for item in data %}
                     <div class="flex flex-col flex-start md:items-center bg-white gap-4 border-4 border-black shadow-[6px_6px_0px_0px_#000] py-6 px-6 md:flex-row">
@@ -182,7 +182,7 @@
 
 
 
-                 </div>
+                </div>
 
             </div>
         </section>

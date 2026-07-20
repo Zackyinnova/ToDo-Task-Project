@@ -8,6 +8,16 @@
     box-shadow: 0px 0px 0px 0px #000000;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
 .ic--baseline-date-range {
   display: inline-block;
   width: 16px;

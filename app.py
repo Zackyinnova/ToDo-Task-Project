@@ -67,5 +67,23 @@ def submitTask():
 
     return redirect(url_for('index'))
 
+@app.route('/delete-task' , methods = ['POST'])
+def deleteTask():
+    cursor = db.cursor()
+
+    id_task = request.form.get("id_task")
+
+    cursor = db.cursor()
+
+    cursor.execute("""
+        DELETE FROM task
+        WHERE id = %s 
+    """, (id_task,))
+
+    db.commit()
+    cursor.close()
+
+    return redirect(url_for("index"))
+
 if __name__ == "__main__":
     app.run(debug=True)

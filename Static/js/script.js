@@ -64,3 +64,70 @@ priorityButtons.forEach(button => {
         priorityInput.value = button.dataset.value;
     });
 });
+
+let currentCategory = "all";
+let currentPriority = "all";
+
+function filterTask() {
+
+    const tasks = document.querySelectorAll(".task-list");
+
+    tasks.forEach(task => {
+
+        console.log({
+            filterCategory: currentCategory,
+            taskCategory: task.dataset.category,
+            filterPriority: currentPriority,
+            taskPriority: task.dataset.priority
+        });
+
+        const taskCategory = task.dataset.category.toLowerCase();
+        const taskPriority = task.dataset.priority.toLowerCase();
+
+        const matchCategory =
+            currentCategory === "all" ||
+            taskCategory === currentCategory;
+
+        const matchPriority =
+            currentPriority === "all" ||
+            taskPriority === currentPriority;
+
+        if (matchCategory && matchPriority) {
+            task.style.display = "";
+        } else {
+            task.style.display = "none";
+        }
+
+    });
+
+}
+
+
+// ================= CATEGORY =================
+
+document.querySelectorAll(".filter-category").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        currentCategory = button.dataset.category.toLowerCase();
+
+        filterTask();
+
+    });
+
+});
+
+
+// ================= PRIORITY =================
+
+document.querySelectorAll(".filter-priority").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        currentPriority = button.dataset.priority.toLowerCase();
+
+        filterTask();
+
+    });
+
+});

@@ -24,7 +24,6 @@ def index():
 
     cursor = db.cursor(dictionary=True)
 
-    # ambil semua task
     cursor.execute("""
         SELECT *
         FROM task
@@ -32,6 +31,8 @@ def index():
     """)
 
     data = cursor.fetchall()
+
+    print(data)   # <-- Tambahkan ini
 
     cursor.close()
 

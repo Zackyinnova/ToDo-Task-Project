@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" href="/Static/css/style.css">
 </head>
-<body class="bg-[#fff9ed] font-archivo min-h-screen  ">
+<body class="bg-[#fff9ed] font-archivo min-h-screen flex flex-col ">
 
     <header class="w-full sticky top-0  border-b-4 border-black bg-[#FFF9ED] py-4">
         <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 lg:px-12 py-4 ">
@@ -48,7 +48,7 @@
                 </a>
 
                 <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " 
-                    href="">
+                    href="/statPage">
                     Stats
                 </a>
 
@@ -68,7 +68,7 @@
         </nav>
     </header>
 
-    <main class="w-full h-[68vh] flex flex-col gap-12 py-5 mb-4">
+    <main class="w-full h-[68vh] flex-1 flex flex-col gap-12 py-5 mb-6">
 
         <!-- Header main -->
         <section>
@@ -187,7 +187,7 @@
                                     edit
                                 </button>
                                 
-                                <form action="/delete-task" method="post">
+                                <form action="/delete-task" class="w-full" method="post">
                                     <input type="hidden" name="id_task" value="{{ item.id }}">
                                     <button class="uppercase text-white font-space text-[12px] font-bold w-full py-2 border-4 border-black bg-[#BA1A1A] shadow-[4px_4px_0px_0px_#000]">
                                         DELETE
@@ -213,7 +213,7 @@
 
     </main>
 
-    <footer class="w-full sticky top-0  border-t-4 border-black bg-[#e9e2cf] py-4">
+    <footer class="w-full border-t-4  border-black bg-[#e9e2cf] py-4">
         <nav class="max-w-7xl mx-auto flex flex-col items-center gap-5 justify-between px-5 md:px-8 lg:px-12 py-4 ">
 
             <!--Left Navbar-->

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    anton: ["Anton", "sans-serif"],
+                    archivo: ["Archivo Narrow", "sans-serif"],
+                    space: ["Space Mono", "monospace"],
+                }
+            }
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/Static/css/style.css">
+</head>
+<body class="bg-[#fff9ed] font-archivo min-h-screen flex flex-col">
+
+    <header class="w-full sticky top-0  border-b-4 border-black bg-[#FFF9ED] py-4">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 lg:px-12 py-4 ">
+
+            <!--Left Navbar-->
+            <div class=" bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000]">
+                <P class="font-anton text-[24px] text-bold">Taskr</P>
+            </div>
+
+
+            <!--Middle navbar-->
+            <div class="hidden md:flex flex flex-row gap-8">
+
+                <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" 
+                    href="/">
+                    Tasks
+                </a>
+
+                <a class="text-[16px] text-[#6D5E00] font-bold border-b-4 border-[#6D5E00] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" 
+                    href="/statPage">
+                    Stats
+                </a>
+
+                <a  class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " href="">
+                    Categories
+                </a>
+
+                <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " href="">
+                    Archive
+                </a>
+            </div>
+
+            <!--Right navbar-->
+            <div id="btn-addtask" class=" md:flex bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000] brutal-btn-hover brutal-btn-active transition-all">
+                <P class="font-anton ">ADD TASK</P>
+            </div>
+        </nav>
+    </header>
+
+    <main class="w-full flex-1 flex flex-col gap-12 py-5 mb-6">
+        <section>
+            <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+                <h1 class="font-anton text-[64px] uppercase">your stats.</h1>
+                <span class=" archivo bold w-fit  text-[22px] text-[#1E1C10]">
+                    Real-time performance metrics. No fluff, just raw data on your productivity cycle.
+                </span>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex flex-col gap-6 px-5 max-w-7xl mx-auto md:px-8 lg:px-12 md:flex-row">
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white brutal-btn-hover">
+                    <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">total task</div>
+                    <div class="font-anton text-[64px] text-[#1E1C10] font-normal">24</div>
+                </div>
+
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white">
+                    <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">Completed</div>
+                    <div class="font-anton text-[64px] text-[#166534] font-normal">18</div>
+                </div>
+
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white">
+                    <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">Pending</div>
+                    <div class="font-anton text-[64px] text-[#1E1C10] font-normal">4</div>
+                </div>
+
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white">
+                    <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">Overdue</div>
+                    <div class="font-anton text-[64px] text-[#BA1A1A] font-normal">2</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex flex-col gap-6 px-5 max-w-7xl mx-auto md:px-8 lg:px-12">
+                <div class="border-4 border-black  shadow-[4px_4px_0px_0px_#000]">
+                    <div class="font-anton text-[40px]">
+                        <p>Weekly Velocity</p>
+                    </div>
+
+                    <div class="">
+                        <div class="">
+                            <div class="font-space font-bold text-[12px]">
+                                <p>Mon</p>
+
+                                <div class="border-2 border-black">
+
+                                </div>
+
+                                <div class="font-space font-bold text-[12px]">
+                                    <P>6</P>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class=""></div>
+                        <div class=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

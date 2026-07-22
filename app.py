@@ -32,7 +32,6 @@ def index():
 
     data = cursor.fetchall()
 
-    print(data)   # <-- Tambahkan ini
 
     cursor.close()
 
@@ -85,6 +84,13 @@ def deleteTask():
     cursor.close()
 
     return redirect(url_for("index"))
+
+@app.route('/statPage')
+def statPage():
+
+    return render_template(
+        "stat_page.html"
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

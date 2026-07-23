@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/Static/css/style.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
+
 <body class="bg-[#fff9ed] font-archivo min-h-screen flex flex-col">
 
     <header class="w-full sticky top-0  border-b-4 border-black bg-[#FFF9ED] py-4">
@@ -212,7 +213,7 @@
                         </div>
                 </div>
 
-                <div class="border-4 border-black p-8 bg-[#FFDD00] flex flex-col gap-10 md:w-full  shadow-[4px_4px_0px_0px_#000]">
+                <div class="border-4 border-black p-8 bg-[#FFDD00] flex flex-col gap-6 md:w-full md:h-fit  shadow-[4px_4px_0px_0px_#000]">
                     <div class="">
                         <p class="font-anton text-[24px] uppercase">Streak tracker</p>
                         <p class="font-archivo text-[16px]">Maintain the momentum. No zero days Allowed.</p>
@@ -289,10 +290,130 @@
                             <P class="font-space font-bold text-[12px]">S</P>
                         </div>
                     </div>
+
+                    <hr class="border-t-4 border-black">
+
+                    <div class="">
+                        <P class="text-[24px] font-anton">4 day streak</P>
+                        <P class="uppercase font-space font-bold text-[12px]"> record : 12 days</P>                            
+                    </div>
                 </div>
 
             </div>
         </section>
     </main>
+
+    <footer class="w-full border-t-4 border-black bg-[#e9e2cf] py-4">
+        <nav class="max-w-7xl mx-auto flex flex-col items-center gap-5 justify-between px-5 md:px-8 lg:px-12 py-4 ">
+
+            <!--Left Navbar-->
+            <div class=" w-full flex justify-center items-center">
+                <P class="font-anton text-[24px] text-bold uppercase">Taskr</P>
+            </div>
+
+
+            <!--Middle navbar-->
+            <div class="font-space text-[12px] font-bold text-[#4C4732]">
+
+                <P>© 2024 TASKR - UNYIELDING PRODUCTIVITY</P>
+            </div>
+
+            <div class="md:flex flex flex-row gap-6 font-bold font-space">
+
+                <a class="text-[12px] uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" 
+                    href="">
+                    Terms
+                </a>
+
+                <a class="text-[12px] uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " 
+                    href="">
+                    Privacy
+                </a>
+
+                <a  class="text-[12px] uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " href="">
+                    Github
+                </a>
+
+                <a class="text-[12px] uppercase hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " href="">
+                    Support
+                </a>
+            </div>
+        </nav>
+    </footer>
+
+    <div class="fixed bottom-0 left-0 right-0 h-24 border-t-4 border-black bg-[#FFF9ED] z-50">
+
+        <!-- Tombol Add -->
+        <button
+            class="absolute left-1/2 -translate-x-1/2 -top-8
+                w-16 h-20
+                flex flex-col items-center justify-center
+                bg-[#FFDD00]
+                border-4 border-black
+                shadow-[6px_6px_0px_0px_#000]">
+
+            <iconify-icon
+                icon="material-symbols:add-rounded"
+                class="text-3xl">
+            </iconify-icon>
+
+            <span class="text-xs font-space font-bold uppercase">
+                Add
+            </span>
+        </button>
+
+        <!-- Menu -->
+        <div class="h-full flex justify-around items-end pb-3">
+
+            <div class="flex flex-col items-center gap-1">
+                <iconify-icon
+                    icon="material-symbols:checklist-rounded"
+                    class="text-2xl text-[#6D5E00]">
+                </iconify-icon>
+
+                <span class="text-xs font-space uppercase">
+                    Task
+                </span>
+            </div>
+
+            <div class="flex flex-col items-center gap-1">
+                <iconify-icon
+                    icon="gridicons:stats"
+                    class="text-2xl text-[#6D5E00]">
+                </iconify-icon>
+
+                <span class="text-xs font-space uppercase">
+                    Stats
+                </span>
+            </div>
+
+            <!-- Spacer supaya Add punya ruang -->
+            <div class="w-16"></div>
+
+            <div class="flex flex-col items-center gap-1">
+                <iconify-icon
+                    icon="material-symbols:category-outline-rounded"
+                    class="text-2xl text-[#6D5E00]">
+                </iconify-icon>
+
+                <span class="text-xs font-space uppercase">
+                    Cats
+                </span>
+            </div>
+
+            <div class="flex flex-col items-center gap-1">
+                <iconify-icon
+                    icon="material-symbols:archive-outline-rounded"
+                    class="text-2xl text-[#6D5E00]">
+                </iconify-icon>
+
+                <span class="text-xs font-space uppercase">
+                    Archive
+                </span>
+            </div>
+
+        </div>
+
+    </div>
 </body>
 </html>

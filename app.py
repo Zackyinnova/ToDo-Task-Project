@@ -87,9 +87,25 @@ def deleteTask():
 
 @app.route('/statPage')
 def statPage():
+    cursor = db.cursor(dictionary=True)
+
+
+    #hitung jumlat task 
+    cursor.execute(
+        """
+        SELECT COUNT(*) AS total
+        from task
+    """
+    )
+
+    result_total = cursor.fetchone()
+
+    cursor.close()
+
 
     return render_template(
-        "stat_page.html"
+        "stat_page.html",
+        result_total = result_total
     )
 
 if __name__ == "__main__":

@@ -84,7 +84,7 @@
             <div class="flex flex-col gap-6 px-5 max-w-7xl mx-auto md:px-8 lg:px-12 md:flex-row">
                 <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white brutal-btn-hover">
                     <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">total task</div>
-                    <div class="font-anton text-[64px] text-[#1E1C10] font-normal">24</div>
+                    <div class="font-anton text-[64px] text-[#1E1C10] font-normal"><p>{{ result_total.total }}</p> </div>
                 </div>
 
                 <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white">
@@ -303,7 +303,7 @@
         </section>
     </main>
 
-    <footer class="w-full border-t-4 border-black bg-[#e9e2cf] py-4 mb-24">
+    <footer class="w-full border-t-4 border-black bg-[#e9e2cf] py-4 md:mb-0 mb-24">
         <nav class="max-w-7xl mx-auto flex flex-col items-center gap-5 justify-between px-5 md:px-8 lg:px-12 py-4 ">
 
             <!--Left Navbar-->
@@ -341,7 +341,7 @@
         </nav>
     </footer>
 
-    <div class="fixed bottom-0 left-0 right-0 px-6 py-4 h-24 border-t-4 border-black bg-[#FFF9ED] z-50">
+    <div class="fixed md:hidden bottom-0 left-0 right-0 px-5 py-4 h-24 border-t-4 border-black bg-[#FFF9ED] z-50">
 
         <!-- Tombol Add -->
         <button
@@ -365,52 +365,60 @@
         <!-- Menu -->
         <div class="h-full flex justify-around items-end pb-3">
 
-            <div class="flex flex-col items-center gap-1 opacity-50">
-                <iconify-icon
-                    icon="material-symbols:checklist-rounded"
-                    class="text-2xl">
-                </iconify-icon>
+            <a href="/">
+                <div class="flex flex-col items-center gap-1 opacity-50">
+                    <iconify-icon
+                        icon="material-symbols:checklist-rounded"
+                        class="text-2xl">
+                    </iconify-icon>
 
-                <span class="text-xs font-space font-bold uppercase">
-                    Task
-                </span>
-            </div>
+                    <span class="text-xs font-space font-bold uppercase">
+                        Task
+                    </span>
+                </div>
+            </a>
 
-            <div class="flex flex-col items-center gap-1">
-                <iconify-icon
-                    icon="gridicons:stats"
-                    class="text-2xl text-[#6D5E00]">
-                </iconify-icon>
+            <a href="/statPage">
+                <div class="flex flex-col items-center gap-1">
+                    <iconify-icon
+                        icon="gridicons:stats"
+                        class="text-2xl text-[#6D5E00]">
+                    </iconify-icon>
 
-                <span class="text-xs font-space text-[#6D5E00] font-bold uppercase">
-                    Stats
-                </span>
-            </div>
+                    <span class="text-xs font-space text-[#6D5E00] font-bold uppercase">
+                        Stats
+                    </span>
+                </div>
+            </a>
 
             <!-- Spacer supaya Add punya ruang -->
             <div class="w-16"></div>
 
-            <div class="flex flex-col items-center gap-1 opacity-50">
-                <iconify-icon
-                    icon="material-symbols:category-outline-rounded"
-                    class="text-2xl">
-                </iconify-icon>
+            <a href="#">
+                <div class="flex flex-col items-center gap-1 opacity-50">
+                    <iconify-icon
+                        icon="material-symbols:category-outline-rounded"
+                        class="text-2xl">
+                    </iconify-icon>
 
-                <span class="text-xs font-space font-bold uppercase">
-                    Cats
-                </span>
-            </div>
+                    <span class="text-xs font-space font-bold uppercase">
+                        Cats
+                    </span>
+                </div>
+            </a>
 
-            <div class="flex flex-col items-center gap-1 opacity-50">
-                <iconify-icon
-                    icon="material-symbols:archive-outline-rounded"
-                    class="text-2xl">
-                </iconify-icon>
+            <a href="#">
+                <div class="flex flex-col items-center gap-1 opacity-50">
+                    <iconify-icon
+                        icon="material-symbols:archive-outline-rounded"
+                        class="text-2xl">
+                    </iconify-icon>
 
-                <span class="text-xs font-space font-bold uppercase">
-                    Archive
-                </span>
-            </div>
+                    <span class="text-xs font-space font-bold uppercase">
+                        Archive
+                    </span>
+                </div>
+            </a>
 
         </div>
 

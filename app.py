@@ -118,16 +118,29 @@ def statPage():
     """
     )
 
+    #hitung jumlah task pending
     result_total = cursor.fetchone()
 
     cursor.execute(
         """
         SELECT COUNT(*) AS total
         from task
+        where status_task = 'proses';
     """
     )
 
     total_pending = cursor.fetchone()
+
+    #hitung jumla task complete
+    cursor.execute(
+        """
+        SELECT COUNT(*) AS total
+        from task
+        WHERE status_task = 'Completed';
+    """
+    )
+
+    total_completed = cursor.fetchone()
 
     cursor.close()
 
@@ -135,7 +148,8 @@ def statPage():
     return render_template(
         "stat_page.html",
         result_total = result_total,
-        total_pending = total_pending
+        total_pending = total_pending,
+        total_completed = total_completed
     )
 
 if __name__ == "__main__":

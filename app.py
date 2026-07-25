@@ -100,12 +100,22 @@ def statPage():
 
     result_total = cursor.fetchone()
 
+    cursor.execute(
+        """
+        SELECT COUNT(*) AS total
+        from task
+    """
+    )
+
+    total_pending = cursor.fetchone()
+
     cursor.close()
 
 
     return render_template(
         "stat_page.html",
-        result_total = result_total
+        result_total = result_total,
+        total_pending = total_pending
     )
 
 if __name__ == "__main__":

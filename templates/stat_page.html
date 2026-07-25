@@ -82,31 +82,32 @@
 
         <section>
             <div class="flex flex-col gap-6 px-5 max-w-7xl mx-auto md:px-8 lg:px-12 md:flex-row">
-                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white brutal-btn-hover">
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                     <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">total task</div>
                     <div class="font-anton text-[64px] text-[#1E1C10] font-normal"><p>{{ result_total.total }}</p> </div>
                 </div>
 
-                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white">
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                     <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">Completed</div>
-                    <div class="font-anton text-[64px] text-[#166534] font-normal">18</div>
+                    <div class="font-anton text-[64px] text-[#166534] font-normal">7</div>
                 </div>
 
-                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white">
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                     <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">Pending</div>
-                    <div class="font-anton text-[64px] text-[#1E1C10] font-normal">4</div>
+                    <div class="font-anton text-[64px] text-[#1E1C10] font-normal">{{ total_pending.total}}</div>
                 </div>
 
-                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white">
+                <div class="border-4 border-black py-8 px-8 md:w-full shadow-[4px_4px_0px_0px_#000] bg-white hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                     <div class="font-space font-bold text-[15px] text-[#4C4732] uppercase">Overdue</div>
                     <div class="font-anton text-[64px] text-[#BA1A1A] font-normal">2</div>
                 </div>
             </div>
         </section>
 
+        <!--weekly data-->
         <section>
             <div class="flex flex-col gap-6 px-5 md:flex-row max-w-7xl mx-auto md:px-8 lg:px-12">
-                <div class="border-4 border-black p-8 bg-white flex flex-col gap-10 md:w-full  shadow-[4px_4px_0px_0px_#000]">
+                <div class="border-4 border-black p-8 bg-white flex flex-col gap-10 md:w-full  shadow-[4px_4px_0px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                         <div class="font-anton text-[40px]">
                             <p>Weekly Velocity</p>
                         </div>
@@ -213,7 +214,7 @@
                         </div>
                 </div>
 
-                <div class="border-4 border-black p-8 bg-[#FFDD00] flex flex-col gap-6 md:w-full md:h-fit  shadow-[4px_4px_0px_0px_#000]">
+                <div class="border-4 border-black p-8 bg-[#FFDD00] flex flex-col gap-6 md:w-full md:h-fit  shadow-[4px_4px_0px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                     <div class="">
                         <p class="font-anton text-[24px] uppercase">Streak tracker</p>
                         <p class="font-archivo text-[16px]">Maintain the momentum. No zero days Allowed.</p>

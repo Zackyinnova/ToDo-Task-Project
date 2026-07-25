@@ -85,6 +85,26 @@ def deleteTask():
 
     return redirect(url_for("index"))
 
+@app.route('/complete-task', methods = ['POST'])
+def completeTask():
+    cursor = db.cursor()
+
+    id_complete = request.form.get("id_complete")
+
+    cursor = db.cursor()
+
+    cursor.execute(
+        """
+        UPDATE task
+        SET status_task = 'Completed'
+        WHERE id = %s
+    """, (id_complete,))
+
+    db.commit()
+    cursor.close()
+
+    return redirect(url_for("index"))
+
 @app.route('/statPage')
 def statPage():
     cursor = db.cursor(dictionary=True)

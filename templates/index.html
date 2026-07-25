@@ -160,9 +160,14 @@
                         <div class="task-list flex flex-col flex-start md:items-center bg-white gap-4 border-4 border-black shadow-[6px_6px_0px_0px_#000] py-6 px-6 md:flex-row"
                             data-category="{{ item.category|lower }}"
                             data-priority="{{ item.priority|lower }}">
-                            <div class="">
-                                <input type="checkbox" class="w-[18px] h-[18px]">
-                            </div>
+
+                            <form action="complete-task" method="post">
+                                <input type="hidden" name="id_complete" value="{{ item.id }}">
+                                <div class="">
+                                    <input type="checkbox" onchange="this.form.submit()" class="w-[18px] h-[18px]">
+                                </div>
+                            </form>
+
 
                             <div class="flex flex-col flex-start gap-1 md:w-full">
                                 <div class="flex flex-row gap-4">

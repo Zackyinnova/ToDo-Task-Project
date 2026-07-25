@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2026 at 06:28 AM
+-- Generation Time: Jul 25, 2026 at 09:52 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,18 +32,19 @@ CREATE TABLE `task` (
   `Task` varchar(255) NOT NULL,
   `due_date` date NOT NULL,
   `category` varchar(50) NOT NULL,
-  `priority` varchar(20) NOT NULL
+  `priority` varchar(20) NOT NULL,
+  `status_task` varchar(255) DEFAULT 'proses'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`id`, `Task`, `due_date`, `category`, `priority`) VALUES
-(1, 'ke kopi kengana', '2026-07-25', '', ''),
-(2, 'ke pasar', '2026-07-25', '', 'Work'),
-(3, 'ke kampus', '2026-07-25', 'High', 'Study'),
-(4, 'ke jakarta', '2026-07-14', 'med', 'Study');
+INSERT INTO `task` (`id`, `Task`, `due_date`, `category`, `priority`, `status_task`) VALUES
+(29, 'ke kerawang', '2026-07-30', 'Study', 'Low', 'proses'),
+(32, 'ke pse enterprise', '2026-07-22', 'Study', 'Med', 'proses'),
+(33, 'ke esa unggul bekasi', '2026-07-21', 'Study', 'High', 'Completed'),
+(34, 'ke esa unggul jakarta', '2026-07-21', 'Study', 'High', 'Completed');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +64,7 @@ ALTER TABLE `task`
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask import request
 import random
 from datetime import date
+from flask_apscheduler import APScheduler
 
 app = Flask(__name__)
 
@@ -105,6 +106,28 @@ def completeTask():
 
     return redirect(url_for("index"))
 
+scheduler = APScheduler()
+scheduler.init_app(app)
+scheduler.start()
+
+@scheduler.task('interval', id='update_overdue', minutes=1)
+def update_overdue_task():
+    cursor = db.cursor()
+
+    cursor.execute("""
+        UPDATE task
+        SET status_task = 'Overdue'
+        WHERE due_date < CURDATE()
+        AND status_task != 'proses'
+    """)
+
+    db.commit()
+    cursor.close()
+
+
+
+    
+
 @app.route('/statPage')
 def statPage():
     cursor = db.cursor(dictionary=True)
@@ -141,6 +164,15 @@ def statPage():
     )
 
     total_completed = cursor.fetchone()
+
+    #ubah data menjadi menjadi overdua
+    #date_now = datetime.now()
+
+    #cursor.execute(
+        #"""
+        #update
+    #"""
+    #)
 
     cursor.close()
 

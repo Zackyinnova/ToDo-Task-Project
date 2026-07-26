@@ -184,7 +184,7 @@
                                     </div>
                                 </div>
 
-                                <div class="font-anton text-[24px]  {% if item.status_task == 'Completed' %}
+                                <div class="font-anton text-[24px]  {% if item.status_task == 'Completed' or item.status_task == 'Overdue' %}
                                                                         line-through text-gray-400
                                                                     {% endif %}">
                                     <P>{{ item.Task }}</P>

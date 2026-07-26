@@ -112,16 +112,22 @@ scheduler.start()
 
 @scheduler.task('interval', id='update_overdue', minutes=1)
 def update_overdue_task():
+
+    print("Scheduler jalan")
+
     cursor = db.cursor()
 
     cursor.execute("""
         UPDATE task
         SET status_task = 'Overdue'
         WHERE due_date < CURDATE()
-        AND status_task != 'proses'
+        AND status_task != 'Completed'
     """)
 
     db.commit()
+
+    print("Task overdue diupdate:", cursor.rowcount)
+
     cursor.close()
 
 
@@ -165,14 +171,16 @@ def statPage():
 
     total_completed = cursor.fetchone()
 
-    #ubah data menjadi menjadi overdua
-    #date_now = datetime.now()
+    #hitung jumlah task overdue
+    cursor.execute(
+        """
+        SELECT COUNT(*) AS total
+        from task
+        WHERE status_task = 'Overdue';
+    """
+    )
 
-    #cursor.execute(
-        #"""
-        #update
-    #"""
-    #)
+    total_overdue = cursor.fetchone()
 
     cursor.close()
 
@@ -181,7 +189,8 @@ def statPage():
         "stat_page.html",
         result_total = result_total,
         total_pending = total_pending,
-        total_completed = total_completed
+        total_completed = total_completed,
+        total_overdue = total_overdue
     )
 
 if __name__ == "__main__":

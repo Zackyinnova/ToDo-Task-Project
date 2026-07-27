@@ -165,7 +165,7 @@
                                 <input type="hidden" name="id_complete" value="{{ item.id }}">
                                 <div class="">
                                     <input type="checkbox" onchange="this.form.submit()" class="w-[18px] h-[18px]"    
-                                    {% if item.status_task == "Completed" %}
+                                    {% if item.status_task == "Completed" or item.status_task =="Overdue" %}
                                         checked
                                         disabled
                                     {% endif %}>

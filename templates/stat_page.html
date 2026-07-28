@@ -12,6 +12,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
     tailwind.config = {
         theme: {
@@ -113,9 +115,12 @@
                         </div>
 
                         <div class=" flex flex-col gap-6">
+                            <canvas id="taskChart"></canvas>
+
+                            <!--
                             <div class="flex flex-row gap-4">
                                 <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>Mon</p>
+                                    <p>Tue</p>
                                 </div>
 
                                 <div class="border-2 border-black w-full ">
@@ -209,9 +214,11 @@
                                 <div class="font-space font-bold text-[12px]">
                                     <P>6</P>
                                 </div>
-                            </div>
+                            </div>-->
 
-                        </div>
+                        </div> 
+                        
+                        
                 </div>
 
                 <div class="border-4 border-black p-8 bg-[#FFDD00] flex flex-col gap-6 md:w-full md:h-fit  shadow-[4px_4px_0px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
@@ -424,5 +431,8 @@
         </div>
 
     </div>
+
+
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
 </body>
 </html>

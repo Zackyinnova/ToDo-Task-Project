@@ -4,8 +4,11 @@ from flask import session
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask import request
 import random
-from datetime import date
+from datetime import date, timedelta
 from flask_apscheduler import APScheduler
+import json
+
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -132,8 +135,6 @@ def update_overdue_task():
 
 
 
-    
-
 @app.route('/statPage')
 def statPage():
     cursor = db.cursor(dictionary=True)
@@ -182,7 +183,6 @@ def statPage():
 
     total_overdue = cursor.fetchone()
 
-    cursor.close()
 
 
     return render_template(
@@ -192,6 +192,45 @@ def statPage():
         total_completed = total_completed,
         total_overdue = total_overdue
     )
+
+@app.route("/api/chart/weekly")
+def weeklyChart():
+
+    cursor = db.cursor(dictionary=True)
+
+    cursor.execute("""
+        SELECT
+            WEEKDAY(due_date) AS day,
+            COUNT(*) AS total
+        FROM task
+        WHERE YEARWEEK(due_date,1)=YEARWEEK(CURDATE(),1)
+        GROUP BY WEEKDAY(due_date)
+    """)
+
+    result = cursor.fetchall()
+
+    cursor.close()
+
+    labels = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+    ]
+
+    values = [0] * 7
+
+    for row in result:
+        values[row["day"]] = row["total"]
+
+    return jsonify({
+        "labels": labels,
+        "values": values
+    })
+
 
 if __name__ == "__main__":
     app.run(debug=True)

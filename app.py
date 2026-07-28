@@ -197,20 +197,20 @@ def statPage():
 def weeklyChart():
 
     cursor = db.cursor(dictionary=True)
-
+ 
     cursor.execute("""
         SELECT
             WEEKDAY(due_date) AS day,
-            COUNT(*) AS total
+            COUNT(*) AS total,
+            SUM(CASE WHEN status_task = 'completed' THEN 1 ELSE 0 END) AS completed
         FROM task
-        WHERE YEARWEEK(due_date,1)=YEARWEEK(CURDATE(),1)
+        WHERE YEARWEEK(due_date,1) = YEARWEEK(CURDATE(),1)
         GROUP BY WEEKDAY(due_date)
     """)
-
+ 
     result = cursor.fetchall()
-
     cursor.close()
-
+ 
     labels = [
         "Monday",
         "Tuesday",
@@ -220,15 +220,18 @@ def weeklyChart():
         "Saturday",
         "Sunday"
     ]
-
-    values = [0] * 7
-
+ 
+    totals = [0] * 7
+    completed = [0] * 7
+ 
     for row in result:
-        values[row["day"]] = row["total"]
-
+        totals[row["day"]] = row["total"]
+        completed[row["day"]] = row["completed"]
+ 
     return jsonify({
         "labels": labels,
-        "values": values
+        "totals": totals,
+        "completed": completed
     })
 
 

@@ -137,3 +137,34 @@ function renderChart(labels, totals, completed) {
 }
 
 loadChart();
+
+async function loadStreak() {
+  const response = await fetch("/api/chart/weekly");
+  const data = await response.json();
+ 
+  // data.completed[i] follows the same index as WEEKDAY() in MySQL:
+  // 0 = Monday ... 6 = Sunday
+ 
+  document.querySelectorAll("[data-day]").forEach((dayEl) => {
+    const i = parseInt(dayEl.dataset.day, 10);
+    const completedCount = data.completed[i] || 0;
+    const isDone = completedCount > 0;
+ 
+    const box = dayEl.querySelector(".streak-box");
+    const icon = dayEl.querySelector(".streak-icon");
+ 
+    if (isDone) {
+      // Done: solid black box + checkmark icon
+      box.classList.remove("bg-white", "border-2", "border-gray-300");
+      box.classList.add("bg-black");
+      icon.classList.remove("hidden");
+    } else {
+      // Not done: plain empty box, no icon
+      box.classList.remove("bg-black");
+      box.classList.add("bg-white", "border-2", "border-gray-300");
+      icon.classList.add("hidden");
+    }
+  });
+}
+ 
+loadStreak();

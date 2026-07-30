@@ -109,119 +109,21 @@
 
         <!--weekly data-->
         <section>
-            <div class="flex flex-col gap-6 px-5 md:flex-row max-w-7xl mx-auto md:px-8 lg:px-12">
-                <div class="border-4 border-black p-8 bg-white flex flex-col gap-10 md:w-full  shadow-[4px_4px_0px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
+            <div class="flex flex-col gap-6 px-5 md:flex-row max-w-7xl mx-auto md:px-8 lg:px-12 ">
+
+                <!--Chart weekly-->
+                <div class="border-4 border-black p-8 bg-white flex flex-col gap-10 md:w-full md:h-fit lg:h-fit shadow-[4px_4px_0px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                         <div class="font-anton text-[40px]">
                             <p>Weekly Velocity</p>
                         </div>
 
                         <div class=" flex flex-col gap-6">
                             <canvas id="taskChart"></canvas>
-
-                            <!--
-                            <div class="flex flex-row gap-4">
-                                <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>Tue</p>
-                                </div>
-
-                                <div class="border-2 border-black w-full ">
-                                    <div class="h-full border-r-2 border-black w-[70%] bg-[#FFDD00]"></div>
-                                </div>
-
-                                <div class="font-space font-bold text-[12px]">
-                                    <P>6</P>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-row gap-[16px]">
-                                <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>Tue</p>
-                                </div>
-
-                                <div class="border-2 border-black w-full ">
-
-                                </div>
-
-                                <div class="font-space font-bold text-[12px]">
-                                    <P>6</P>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-row gap-[16px]">
-                                <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>Wed</p>
-                                </div>
-
-                                <div class="border-2 border-black w-full ">
-
-                                </div>
-
-                                <div class="font-space font-bold text-[12px]">
-                                    <P>6</P>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-row gap-[16px]">
-                                <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>thu</p>
-                                </div>
-
-                                <div class="border-2 border-black w-full ">
-
-                                </div>
-
-                                <div class="font-space font-bold text-[12px]">
-                                    <P>6</P>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-row gap-[16px]">
-                                <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>Fri</p>
-                                </div>
-
-                                <div class="border-2 border-black w-full ">
-
-                                </div>
-
-                                <div class="font-space font-bold text-[12px]">
-                                    <P>6</P>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-row gap-[16px]">
-                                <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>Sat</p>
-                                </div>
-
-                                <div class="border-2 border-black w-full ">
-
-                                </div>
-
-                                <div class="font-space font-bold text-[12px]">
-                                    <P>6</P>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-row gap-[16px]">
-                                <div class="font-space font-bold text-[12px] uppercase ">
-                                    <p>sun</p>
-                                </div>
-
-                                <div class="border-2 border-black w-full ">
-
-                                </div>
-
-                                <div class="font-space font-bold text-[12px]">
-                                    <P>6</P>
-                                </div>
-                            </div>-->
-
                         </div> 
-                        
-                        
+                                     
                 </div>
 
+                <!--streak tracker-->
                 <div class="border-4 border-black p-8 bg-[#FFDD00] flex flex-col gap-6 md:w-full md:h-fit  shadow-[4px_4px_0px_0px_#000] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
                     <div class="">
                         <p class="font-anton text-[24px] uppercase">Streak tracker</p>
@@ -229,74 +131,82 @@
                     </div>
 
                     <div class="flex flex-row gap-6 flex-wrap">
-                        <div class="flex flex-col items-center gap-2">
-                            <div class="bg-black w-[40px] h-[40px] flex justify-center items-center">
-                                <iconify-icon
-                                    icon="material-symbols:close-rounded"
-                                    class="text-white text-2xl">
-                                </iconify-icon>
-                            </div>
-                            <P class="font-space font-bold text-[12px]">M</P>
-                        </div>
 
-                        <div class="flex flex-col items-center gap-2">
-                            <div class="bg-black w-[40px] h-[40px] flex justify-center items-center">
-                                <iconify-icon
-                                    icon="material-symbols:close-rounded"
-                                    class="text-white text-2xl">
-                                </iconify-icon>
-                            </div>
-                            <P class="font-space font-bold text-[12px]">T</P>
+                        <!-- Monday = day 0 -->
+                        <div class="flex flex-col items-center gap-2" data-day="0">
+                                <div class="streak-box bg-white border-2 border-gray-300 w-[40px] h-[40px] flex justify-center items-center rounded-md">
+                                    <iconify-icon
+                                        class="streak-icon text-white text-2xl hidden"
+                                        icon="material-symbols:check-rounded">
+                                    </iconify-icon>
+                                </div>
+                                <p class="font-space font-bold text-[12px]">M</p>
                         </div>
-
-                        <div class="flex flex-col items-center gap-2">
-                            <div class="bg-black w-[40px] h-[40px] flex justify-center items-center">
+ 
+                        <!-- Tuesday = day 1 -->
+                        <div class="flex flex-col items-center gap-2" data-day="1">
+                            <div class="streak-box bg-white border-2 border-gray-300 w-[40px] h-[40px] flex justify-center items-center rounded-md">
                                 <iconify-icon
-                                    icon="material-symbols:close-rounded"
-                                    class="text-white text-2xl">
+                                    class="streak-icon text-white text-2xl hidden"
+                                    icon="material-symbols:check-rounded">
                                 </iconify-icon>
                             </div>
-                            <P class="font-space font-bold text-[12px]">W</P>
+                            <p class="font-space font-bold text-[12px]">T</p>
                         </div>
-
-                        <div class="flex flex-col items-center gap-2">
-                            <div class="bg-black w-[40px] h-[40px] flex justify-center items-center">
+ 
+                        <!-- Wednesday = day 2 -->
+                        <div class="flex flex-col items-center gap-2" data-day="2">
+                            <div class="streak-box bg-white border-2 border-gray-300 w-[40px] h-[40px] flex justify-center items-center rounded-md">
                                 <iconify-icon
-                                    icon="material-symbols:close-rounded"
-                                    class="text-white text-2xl">
+                                    class="streak-icon text-white text-2xl hidden"
+                                    icon="material-symbols:check-rounded">
                                 </iconify-icon>
                             </div>
-                            <P class="font-space font-bold text-[12px]">T</P>
+                            <p class="font-space font-bold text-[12px]">W</p>
                         </div>
-
-                        <div class="flex flex-col items-center gap-2">
-                            <div class="bg-black w-[40px] h-[40px] flex justify-center items-center">
+ 
+                        <!-- Thursday = day 3 -->
+                        <div class="flex flex-col items-center gap-2" data-day="3">
+                            <div class="streak-box bg-white border-2 border-gray-300 w-[40px] h-[40px] flex justify-center items-center rounded-md">
                                 <iconify-icon
-                                    icon="material-symbols:close-rounded"
-                                    class="text-white text-2xl">
+                                    class="streak-icon text-white text-2xl hidden"
+                                    icon="material-symbols:check-rounded">
                                 </iconify-icon>
                             </div>
-                            <P class="font-space font-bold text-[12px]">F</P>
+                            <p class="font-space font-bold text-[12px]">T</p>
                         </div>
-
-                        <div class="flex flex-col items-center gap-2">
-                            <div class="bg-black w-[40px] h-[40px] flex justify-center items-center">
+ 
+                        <!-- Friday = day 4 -->
+                        <div class="flex flex-col items-center gap-2" data-day="4">
+                            <div class="streak-box bg-white border-2 border-gray-300 w-[40px] h-[40px] flex justify-center items-center rounded-md">
                                 <iconify-icon
-                                    icon="material-symbols:close-rounded"
-                                    class="text-white text-2xl">
+                                    class="streak-icon text-white text-2xl hidden"
+                                    icon="material-symbols:check-rounded">
                                 </iconify-icon>
                             </div>
-                            <P class="font-space font-bold text-[12px]">S</P>
+                            <p class="font-space font-bold text-[12px]">F</p>
                         </div>
-
-                        <div class="flex flex-col items-center gap-2">
-                            <div class="bg-black w-[40px] h-[40px] flex justify-center items-center">
+ 
+                        <!-- Saturday = day 5 -->
+                        <div class="flex flex-col items-center gap-2" data-day="5">
+                            <div class="streak-box bg-white border-2 border-gray-300 w-[40px] h-[40px] flex justify-center items-center rounded-md">
                                 <iconify-icon
-                                    icon="material-symbols:close-rounded"
-                                    class="text-white text-2xl">
+                                    class="streak-icon text-white text-2xl hidden"
+                                    icon="material-symbols:check-rounded">
                                 </iconify-icon>
                             </div>
-                            <P class="font-space font-bold text-[12px]">S</P>
+                            <p class="font-space font-bold text-[12px]">S</p>
+                        </div>
+ 
+                        <!-- Sunday = day 6 -->
+                        <div class="flex flex-col items-center gap-2" data-day="6">
+                            <div class="streak-box bg-white border-2 border-gray-300 w-[40px] h-[40px] flex justify-center items-center rounded-md">
+                                <iconify-icon
+                                    class="streak-icon text-white text-2xl hidden"
+                                    icon="material-symbols:check-rounded">
+                                </iconify-icon>
+                            </div>
+                            <p class="font-space font-bold text-[12px]">S</p>
                         </div>
                     </div>
 

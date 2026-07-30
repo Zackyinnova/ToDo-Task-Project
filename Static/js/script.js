@@ -138,3 +138,8 @@ document.querySelectorAll(".filter-priority").forEach(button => {
     });
 
 });
+
+document.querySelectorAll(".category-button").forEach((btn) => {
+    btn.style.backgroundColor = btn.dataset.bg;
+    btn.style.color = btn.dataset.color;
+});

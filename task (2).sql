@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2026 at 09:52 AM
+-- Generation Time: Jul 30, 2026 at 03:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,18 +33,17 @@ CREATE TABLE `task` (
   `due_date` date NOT NULL,
   `category` varchar(50) NOT NULL,
   `priority` varchar(20) NOT NULL,
-  `status_task` varchar(255) DEFAULT 'proses'
+  `status_task` varchar(255) DEFAULT 'proses',
+  `category_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`id`, `Task`, `due_date`, `category`, `priority`, `status_task`) VALUES
-(29, 'ke kerawang', '2026-07-30', 'Study', 'Low', 'proses'),
-(32, 'ke pse enterprise', '2026-07-22', 'Study', 'Med', 'proses'),
-(33, 'ke esa unggul bekasi', '2026-07-21', 'Study', 'High', 'Completed'),
-(34, 'ke esa unggul jakarta', '2026-07-21', 'Study', 'High', 'Completed');
+INSERT INTO `task` (`id`, `Task`, `due_date`, `category`, `priority`, `status_task`, `category_id`) VALUES
+(49, 'belajar ipa', '2026-07-31', 'school', 'High', 'proses', NULL),
+(50, 'belajar ips', '2026-07-31', 'school', 'Med', 'proses', NULL);
 
 --
 -- Indexes for dumped tables
@@ -54,7 +53,8 @@ INSERT INTO `task` (`id`, `Task`, `due_date`, `category`, `priority`, `status_ta
 -- Indexes for table `task`
 --
 ALTER TABLE `task`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -64,7 +64,17 @@ ALTER TABLE `task`
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `task`
+--
+ALTER TABLE `task`
+  ADD CONSTRAINT `task_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

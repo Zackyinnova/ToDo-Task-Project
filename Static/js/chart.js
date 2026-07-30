@@ -142,8 +142,6 @@ async function loadStreak() {
   const response = await fetch("/api/chart/weekly");
   const data = await response.json();
  
-  // data.completed[i] follows the same index as WEEKDAY() in MySQL:
-  // 0 = Monday ... 6 = Sunday
  
   document.querySelectorAll("[data-day]").forEach((dayEl) => {
     const i = parseInt(dayEl.dataset.day, 10);

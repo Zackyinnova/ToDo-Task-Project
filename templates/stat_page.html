@@ -35,7 +35,7 @@
 
 <body class="bg-[#fff9ed] font-archivo min-h-screen flex flex-col">
 
-    <header class="w-full sticky top-0  border-b-4 border-black bg-[#FFF9ED] py-4">
+    <header class="w-full sticky z-50 top-0  border-b-4 border-black bg-[#FFF9ED] py-4">
         <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 lg:px-12 py-4 ">
 
             <!--Left Navbar-->
@@ -343,7 +343,111 @@
 
     </div>
 
+    <!--Overlay add task-->
+    <div id="overlay-addtask" class="hidden bg-black/55 w-full h-full fixed top-0 p-6 md:p-20 justify-center items-center">
+        <div class="border-4 flex flex-col gap-8 border-black bg-[#FFF9ED] w-full md:w-[46%] p-8 text-10 font-anton shadow-[4px_4px_0px_0px_#000] ">
+
+            <div class=" w-full">
+                <P class="uppercase text-[40px]">New Mission objective</P>
+            </div>
+
+            <form class="flex flex-col gap-6" action="/submitTask" method="POST" >
+                <div class="flex flex-col">
+                    <label class="font-space font-bold">TASK NAME</label>
+                    <input
+                        type="text"
+                        class="border-4 border-black py-4 px-3 text-[24px] focus:border-[#2563EB]  focus:outline-none"
+                        placeholder="ENTER MISSION OBJECTIVE..."
+                        name="Task"
+                    >
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="font-space font-bold">Due Date</label>
+                    <input
+                        type="date"
+                        class="border-4 font-archivo uppercase border-black py-4 px-3 text-[16px] focus:border-[#2563EB]  focus:outline-none"
+                        name="due_date"
+                    >
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 ">
+                    <div class="w-full">
+                        <label class="font-space font-bold text-[14px] uppercase">
+                            Category
+                        </label>
+
+                        <input type="hidden" name="priority" id="priority" value="">
+                        <div class="button-group mt-2 flex flex-row gap-4">
+                            <button
+                                type="button"
+                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="High"
+                            >
+                                High
+                            </button>
+
+                            <button
+                                type="button"
+                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Med"
+                            >
+                                Med
+                            </button>
+
+                            <button
+                                type="button"
+                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Low"
+                            >
+                                Low
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="w-full">
+                        <label class="font-space font-bold text-[14px] uppercase">
+                            Priority
+                        </label>
+
+                        <input type="hidden" name="category" id="category" value="">
+                        <div class="button-group mt-2 flex flex-row gap-4">
+                            <button
+                                type="button"
+                                class="category-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Study"
+                            >
+                                Study
+                            </button>
+
+                            <button
+                                type="button"
+                                class="category-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Work"
+                            >
+                                Work
+                            </button>
+
+                            <button
+                                type="button"
+                                class="category-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                data-value="Personal"
+                            >
+                                Personal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="bg-[#FFDD00] border-4 border-black py-4 text-[24px] shadow-[4px_4px_0px_0px_#000] hover:translate-y-[-2px] transition-transform brutal-btn-hover">
+                    INITIATE TASK
+                </button>
+            </form>
+        </div>
+    </div>
+
 
     <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

@@ -8,6 +8,11 @@ function renderChart(labels, totals, completed) {
 
   const remaining = totals.map((t, i) => Math.max(0, t - completed[i]));
 
+  // Convert to percentages so every row spans the full track width,
+  // regardless of how many tasks that day actually has.
+  const completedPct = totals.map((t, i) => (t > 0 ? (completed[i] / t) * 100 : 0));
+  const remainingPct = totals.map((t, i) => (t > 0 ? (remaining[i] / t) * 100 : 100));
+
   // Alternate yellow / black fill per day, gray out days with no tasks at all
   const fillColors = totals.map((t, i) => {
     if (t === 0) return "#d9d9d9";
@@ -15,6 +20,45 @@ function renderChart(labels, totals, completed) {
   });
 
   const borderColors = totals.map((t) => (t === 0 ? "#9a9a9a" : "#111111"));
+
+  // Border only on the OUTER edges of the combined bar.
+  // The edge where completed meets remaining gets no border, so the two
+  // segments read as one continuous track instead of two separate boxes.
+  function completedBorderWidth(ctx) {
+    const i = ctx.dataIndex;
+    const isFull = remaining[i] === 0; // completed fills the whole bar
+    return { top: 3, bottom: 3, left: 3, right: isFull ? 3 : 0 };
+  }
+
+  function remainingBorderWidth(ctx) {
+    const i = ctx.dataIndex;
+    const isEmpty = completed[i] === 0; // nothing completed, remaining fills whole bar
+    return { top: 3, bottom: 3, right: 3, left: isEmpty ? 3 : 0 };
+  }
+
+  // Rounded corners only on the outer ends of the bar; square where the two
+  // segments touch, so the border radius reads as one pill shape.
+  function completedBorderRadius(ctx) {
+    const i = ctx.dataIndex;
+    const isFull = remaining[i] === 0;
+    return {
+      topLeft: 6,
+      bottomLeft: 6,
+      topRight: isFull ? 6 : 0,
+      bottomRight: isFull ? 6 : 0
+    };
+  }
+
+  function remainingBorderRadius(ctx) {
+    const i = ctx.dataIndex;
+    const isEmpty = completed[i] === 0;
+    return {
+      topRight: 6,
+      bottomRight: 6,
+      topLeft: isEmpty ? 6 : 0,
+      bottomLeft: isEmpty ? 6 : 0
+    };
+  }
 
   const ctx = document.getElementById("taskChart");
 
@@ -25,24 +69,25 @@ function renderChart(labels, totals, completed) {
       datasets: [
         {
           label: "Completed",
-          data: completed,
+          data: completedPct,
           backgroundColor: fillColors,
           borderColor: borderColors,
-          borderWidth: 3,
-          borderRadius: 6,
+          borderWidth: completedBorderWidth,
+          borderRadius: completedBorderRadius,
           borderSkipped: false,
           stack: "tasks"
         },
         {
           label: "Remaining",
-          data: remaining,
+          data: remainingPct,
           backgroundColor: "#f0e9db",
           borderColor: borderColors,
-          borderWidth: 3,
-          borderRadius: 6,
+          borderWidth: remainingBorderWidth,
+          borderRadius: remainingBorderRadius,
           borderSkipped: false,
           stack: "tasks",
           datalabels: {
+            display: true,
             anchor: "end",
             align: "end",
             offset: 8,
@@ -61,6 +106,8 @@ function renderChart(labels, totals, completed) {
       scales: {
         x: {
           stacked: true,
+          min: 0,
+          max: 100,
           display: false,
           grid: { display: false }
         },
@@ -75,7 +122,11 @@ function renderChart(labels, totals, completed) {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: (ctx) => `${ctx.dataset.label}: ${ctx.raw}`
+            label: (ctx) => {
+              const i = ctx.dataIndex;
+              const value = ctx.datasetIndex === 0 ? completed[i] : remaining[i];
+              return `${ctx.dataset.label}: ${value}`;
+            }
           }
         },
         datalabels: { display: false }

@@ -237,7 +237,29 @@ def weeklyChart():
 @app.route('/categories')
 def categories_page():
 
+
     return render_template("categories.html")
+
+@app.route('/submitCategory', methods=['POST'])
+def submitCategory():
+
+    cursor = db.cursor()
+
+    category_name = request.form.get('Categories')
+    color = request.form.get('color_categories')
+
+    cursor.execute(
+        """
+        INSERT INTO categories(category_name, color)
+        VALUES(%s,%s)
+    """, (category_name,color))
+
+    db.commit()
+    cursor.close()
+
+    return redirect(url_for('categories_page'))
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

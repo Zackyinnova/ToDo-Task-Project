@@ -85,7 +85,7 @@
                 <div class="border-4 border-black shadow-[4px_4px_0px_0px_#000] p-8">
                     <div class="uppercase font-anton text-[24px]"> add categories</div>
 
-                    <form action="" class="flex flex-col md:flex-row gap-4">
+                    <form action="/submitCategory" method="POST" class="flex flex-col md:flex-row gap-4">
 
                         <div class="w-full">
                             <P class="font-space font-bold text-[12px]">New Category Name</P>
@@ -95,11 +95,31 @@
                         <div class="w-full">
                             <P class="uppercase font-space font-bold text-[12px]">Pick color</P>
                             <div class=" flex flex-row gap-2 mt-2">
-                                <div class="bg-[#3B82F6] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#3B82F6"></div>
-                                <div class="bg-[#FACC15] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#FACC15"></div>
-                                <div class="bg-[#EF4444] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#EF4444"></div>
-                                <div class="bg-[#22C55E] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#22C55E"></div>
-                                <div class="bg-[#A855F7] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#A855F7"></div>
+                                <input type="hidden" name="color_categories" id="color_categories">
+                                
+                                <div 
+                                    class="color-box bg-[#3B82F6] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" 
+                                    data-color="#3B82F6">
+                                </div>
+
+                                <div 
+                                    class="color-box bg-[#FACC15] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" 
+                                    data-color="#FACC15"></div>
+
+                                <div 
+                                    class="color-box bg-[#EF4444] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" 
+                                    data-color="#EF4444">
+                                </div>
+
+                                <div 
+                                    class="color-box bg-[#22C55E] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" 
+                                    data-color="#22C55E">
+                                </div>
+
+                                <div 
+                                    class="color-box bg-[#A855F7] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" 
+                                    data-color="#A855F7">
+                                </div>
                             </div>
                         </div>
                         
@@ -115,5 +135,7 @@
             </div>
         </section>
     </main>
+
+    <script src="{{ url_for('static', filename='js/categories.js') }}"></script>
 </body>
 </html>

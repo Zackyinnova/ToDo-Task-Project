@@ -234,6 +234,10 @@ def weeklyChart():
         "completed": completed
     })
 
+@app.route('/categories')
+def categories_page():
+
+    return render_template("categories.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

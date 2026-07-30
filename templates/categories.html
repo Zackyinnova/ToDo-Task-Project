@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    anton: ["Anton", "sans-serif"],
+                    archivo: ["Archivo Narrow", "sans-serif"],
+                    space: ["Space Mono", "monospace"],
+                }
+            }
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/Static/css/style.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+
+<body class="bg-[#fff9ed] font-archivo min-h-screen flex flex-col">
+    <header class="w-full sticky z-50 top-0  border-b-4 border-black bg-[#FFF9ED] py-4">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-8 lg:px-12 py-4 ">
+
+            <!--Left Navbar-->
+            <div class=" bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000]">
+                <P class="font-anton text-[24px] text-bold">Taskr</P>
+            </div>
+
+
+            <!--Middle navbar-->
+            <div class="hidden md:flex flex flex-row gap-8">
+
+                <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" 
+                    href="/">
+                    Tasks
+                </a>
+
+                <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform" 
+                    href="/statPage">
+                    Stats
+                </a>
+
+                <a  class="text-[16px] text-[#6D5E00] font-bold border-b-4 border-[#6D5E00] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
+                 href="">
+                    Categories
+                </a>
+
+                <a class="text-[16px] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform " href="">
+                    Archive
+                </a>
+            </div>
+
+            <!--Right navbar-->
+            <div id="btn-addtask" class=" md:flex bg-[#ffdd00] py-1 px-4 border-4 border-black shadow-[6px_6px_0px_0px_#000] brutal-btn-hover brutal-btn-active transition-all">
+                <P class="font-anton ">ADD TASK</P>
+            </div>
+        </nav>
+    </header>
+
+    <main class="w-full flex-1 flex flex-col gap-12 py-5 mb-6">
+        <section>
+            <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+                <h1 class="font-anton text-[64px] uppercase">Categories</h1>
+            </div>
+        </section>
+
+        <section>
+            <div class=" max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+                <div class="border-4 border-black shadow-[4px_4px_0px_0px_#000] p-8">
+                    <div class="uppercase font-anton text-[24px]"> add categories</div>
+
+                    <form action="" class="flex flex-col md:flex-row gap-4">
+
+                        <div class="w-full">
+                            <P class="font-space font-bold text-[12px]">New Category Name</P>
+                            <input type="text" name="Categories" placeholder="New Category" class="font-anton border-4 border-black w-full py-4 px-3 text-[24px] focus:border-[#2563EB]  focus:outline-none mt-2" id="">
+                        </div>
+
+                        <div class="w-full">
+                            <P class="uppercase font-space font-bold text-[12px]">Pick color</P>
+                            <div class=" flex flex-row gap-2 mt-2">
+                                <div class="bg-[#3B82F6] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#3B82F6"></div>
+                                <div class="bg-[#FACC15] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#FACC15"></div>
+                                <div class="bg-[#EF4444] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#EF4444"></div>
+                                <div class="bg-[#22C55E] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#22C55E"></div>
+                                <div class="bg-[#A855F7] w-[45px] h-[45px] border-4 border-black shadow-[4px_4px_0px_0px_#000]" color-categories="#A855F7"></div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="w-full border-4 border-black bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000] py-4 flex justify-center items-center gap-2">
+                            <P class="font-anton text-[20px] uppercase">add category</P>
+                            <iconify-icon
+                                icon="icon-park-outline:add"
+                                class="text-3xl">
+                            </iconify-icon>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -304,7 +304,7 @@
                         <div class="button-group mt-2 flex flex-row gap-4">
                             <button
                                 type="button"
-                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold "
                                 data-value="High"
                             >
                                 High
@@ -312,7 +312,7 @@
 
                             <button
                                 type="button"
-                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold"
                                 data-value="Med"
                             >
                                 Med
@@ -320,7 +320,7 @@
 
                             <button
                                 type="button"
-                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
+                                class="priority-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold"
                                 data-value="Low"
                             >
                                 Low
@@ -333,32 +333,23 @@
                             Priority
                         </label>
 
-                        <input type="hidden" name="category" id="category" value="">
-                        <div class="button-group mt-2 flex flex-row gap-4">
-                            <button
-                                type="button"
-                                class="category-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
-                                data-value="Study"
-                            >
-                                Study
-                            </button>
+                        <input type="hidden" name="category" id="category">
 
+                        <div class="button-group mt-2 flex flex-row gap-4 flex-wrap">
+                        {% for category in categories %}
                             <button
                                 type="button"
-                                class="category-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
-                                data-value="Work"
-                            >
-                                Work
+                                class="category-button toggle-button uppercase py-2 px-4 border-2 border-black text-[12px] font-space font-bold"
+                                data-value="{{ category.category_name }}"
+                                style="
+                                    background-color: {{ category.text_color }};
+                                    color: {{ category.color }};
+                                ">
+                                {{ category.category_name }}
                             </button>
-
-                            <button
-                                type="button"
-                                class="category-button toggle-button uppercase toggle-button bg-white py-2 px-4 border-2 border-black text-[12px] font-space font-bold hover:translate-y-[-2px] transition-transform brutal-btn-hover"
-                                data-value="Personal"
-                            >
-                                Personal
-                            </button>
+                        {% endfor %}
                         </div>
+
                     </div>
                 </div>
 

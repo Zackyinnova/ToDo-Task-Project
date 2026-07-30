@@ -36,12 +36,21 @@ def index():
 
     data = cursor.fetchall()
 
+    cursor.execute("""
+        SELECT *
+        FROM categories
+        ORDER BY category_name
+    """)
+
+    categories = cursor.fetchall()
+
 
     cursor.close()
 
     return render_template(
         "index.html",
-        data=data
+        data=data,
+        categories=categories
     )
 
 @app.route('/testpage')
@@ -248,11 +257,24 @@ def submitCategory():
     category_name = request.form.get('Categories')
     color = request.form.get('color_categories')
 
+    if color == "#3B82F6":
+        text_color = "#DBEAFE"
+    elif color == "#FACC15":
+        text_color = "#FEF9C3"
+    elif color == "#EF4444":
+        text_color = "#FFDAD6"
+    elif color == "#22C55E":
+        text_color = "#DCFCE7"
+    elif color == "#A855F7":
+        text_color = "#F3E8FF"
+    else:
+        text_color = "#FFFFFF"
+
     cursor.execute(
         """
-        INSERT INTO categories(category_name, color)
-        VALUES(%s,%s)
-    """, (category_name,color))
+        INSERT INTO categories(category_name, color,text_color)
+        VALUES(%s,%s,%s)
+    """, (category_name,color, text_color))
 
     db.commit()
     cursor.close()

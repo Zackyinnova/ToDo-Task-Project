@@ -21,16 +21,23 @@ buttonGroups.forEach((group) => {
 
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
+            // Reset semua button dalam grup ini ke posisi normal
             buttons.forEach((item) => {
-                item.classList.remove("bg-[#FFDD00]");
-                item.classList.add("bg-white");
+                item.classList.remove(
+                    "-translate-x-[2px]",
+                    "-translate-y-[2px]"
+                );
             });
 
-            button.classList.remove("bg-white");
-            button.classList.add("bg-[#FFDD00]");
+            // Highlight button yang barusan diklik
+            button.classList.add(
+                "-translate-x-[2px]",
+                "-translate-y-[2px]"
+            );
         });
     });
 });
+
 
 const btnAddTask = document.getElementById("btn-addtask");
 const overAddTask = document.getElementById("overlay-addtask");

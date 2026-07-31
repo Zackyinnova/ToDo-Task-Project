@@ -24,3 +24,4 @@ colorBoxes.forEach(box => {
     });
 
 });
+

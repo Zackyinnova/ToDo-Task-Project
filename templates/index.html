@@ -135,7 +135,21 @@
                                 ALL
                             </button>
 
-                            <button class="filter-category py-1 px-3 text-[12px] font-bold border-4 border-black brutal-btn-hover shadow-[4px_4px_0px_0px_#000]"
+                            {% for category in categories %}
+                                <button
+                                    type="button"
+                                    class="filter-category uppercase py-2 px-4 border-2 border-black text-[12px] font-space font-bold"
+                                    data-value="{{ category.category_name }}"
+                                    data-category="{{ category.category_name }}"
+                                    data-bg="{{ category.text_color }}"
+                                    data-color="{{ category.color }}">
+                                    {{ category.category_name }}
+                                </button>
+                            {% endfor %}
+                            
+                        
+                        <!--
+                           <button class="filter-category py-1 px-3 text-[12px] font-bold border-4 border-black brutal-btn-hover shadow-[4px_4px_0px_0px_#000]"
                                 data-category="work">
                                 WORK
                             </button>
@@ -149,6 +163,7 @@
                                 data-category="study">
                                 Study
                             </button>
+                        -->
                         </div>
                     </div>
 

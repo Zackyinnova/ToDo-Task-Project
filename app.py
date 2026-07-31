@@ -246,8 +246,28 @@ def weeklyChart():
 @app.route('/categories')
 def categories_page():
 
+    cursor = db.cursor(dictionary=True)
 
-    return render_template("categories.html")
+    cursor.execute(
+        """
+                SELECT
+            c.id,
+            c.category_name,
+            c.color,
+            COUNT(t.id) AS total
+        FROM categories c
+        LEFT JOIN task t
+            ON c.id = t.category_id
+        GROUP BY c.id, c.category_name, c.color;
+    """
+    )
+
+    total_category = cursor.fetchall()
+
+    return render_template(
+        "categories.html",
+        total_category = total_category
+        )
 
 @app.route('/submitCategory', methods=['POST'])
 def submitCategory():

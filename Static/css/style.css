@@ -17,6 +17,10 @@
     scrollbar-width: none;
 }
 
+.category-color{
+    background-color: var(--category-color);
+}
+
 
 .ic--baseline-date-range {
   display: inline-block;

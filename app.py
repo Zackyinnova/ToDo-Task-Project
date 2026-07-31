@@ -2,7 +2,7 @@ import mysql.connector
 import re
 from flask import session
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-from flask import request
+from flask import request, flash
 import random
 from datetime import date, timedelta
 from flask_apscheduler import APScheduler
@@ -300,6 +300,37 @@ def submitCategory():
     cursor.close()
 
     return redirect(url_for('categories_page'))
+
+@app.route('/delete-Category', methods=['POST'])
+def deleteCategory():
+
+    cursor = db.cursor(dictionary=True)
+
+    id_category = request.form.get("id_category")
+
+    cursor.execute("""
+        SELECT COUNT(*) AS total
+        FROM task
+        WHERE category_id = %s
+    """, (id_category,))
+
+    result = cursor.fetchone()
+
+    if result["total"] > 0:
+        flash("Category tidak dapat dihapus karena masih digunakan oleh task.", "error")
+        cursor.close()
+        return redirect(url_for("categories_page"))
+
+    cursor.execute("""
+        DELETE FROM categories
+        WHERE id = %s
+    """, (id_category,))
+
+    db.commit()
+    cursor.close()
+
+    flash("Category berhasil dihapus.", "success")
+    return redirect(url_for("categories_page"))
 
 
 

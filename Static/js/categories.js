@@ -25,4 +25,7 @@ colorBoxes.forEach(box => {
 
 });
 
+document.querySelectorAll(".category-color").forEach((item) => {
+    item.style.backgroundColor = item.dataset.color;
+});
 

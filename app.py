@@ -31,6 +31,9 @@ def index():
     cursor.execute("""
         SELECT *
         FROM task
+        WHERE status_task = "Completed"
+        OR status_task = "Overdue"
+        OR status_task = "proses"
         ORDER BY due_date
     """)
 
@@ -89,8 +92,9 @@ def deleteTask():
     cursor = db.cursor()
 
     cursor.execute("""
-        DELETE FROM task
-        WHERE id = %s 
+        UPDATE task
+        SET status_task= "delete"
+        WHERE id= %s
     """, (id_task,))
 
     db.commit()
@@ -332,7 +336,14 @@ def deleteCategory():
     flash("Category berhasil dihapus.", "success")
     return redirect(url_for("categories_page"))
 
+@app.route('/archivePage')
+def archivePage():
 
+    
+
+    return render_template(
+        "ArcivePage.html"
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -338,10 +338,22 @@ def deleteCategory():
 @app.route('/archivePage')
 def archivePage():
 
+    cursor = db.cursor(dictionary=True)
+
+    cursor.execute("""
+        SELECT *
+        FROM task
+        WHERE status_task != "proses"
+    """)
+
+    archiveTask = cursor.fetchall()
+
+    cursor.close()
     
 
     return render_template(
-        "ArcivePage.html"
+        "ArcivePage.html",
+        archiveTask = archiveTask
     )
 
 if __name__ == "__main__":

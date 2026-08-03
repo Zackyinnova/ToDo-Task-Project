@@ -15,6 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 
+    <!-- Ganti CDN lama kamu dengan ini -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <script>
     tailwind.config = {
         theme: {
@@ -106,32 +108,48 @@
                         <div class=" flex flex-col gap-2">
                             <P class=" font-anton text-[24px]">{{ item.Task }}</P>
 
-                            <div class="border-4 border-black px-4 py-1 w-fit bg-[#EFE8D5]">
-                                <p class="font-space font-bold text-[12px]">Completed : {{ item.date_completed}}</p>
+                            <div class="border-4 border-black px-4 py-1 w-fit bg-[#EFE8D5] flex flex-row">
+                                <p class="font-space font-bold text-[12px]">
+                                    {% if item.status_task != "Completed" %}
+                                        {{item.status_task}} :
+                                    {% else %}
+                                        Completed :
+                                    {% endif %}
+                                    
+                                </p>
+
+                                <P class="font-space font-bold text-[12px]">
+                                    {% if item.status_task != "Completed" %}
+                                        {{ item.due_date }}
+                                    {% else %}
+                                        {{ item.date_completed }}
+                                    {% endif %}
+                                </P>
+                                
                             </div>
                         </div>
 
                         <!--Right-->
 
-                        <div class="flex flex-row gap-4">
-                            <div class="w-full bg-[#DEDEDE] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
+                        <div class="flex flex-row gap-4 items-center">
+                            <button class="whitespace-nowrap h-fit bg-[#DEDEDE] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
                                 <iconify-icon
                                     icon="tabler:restore"
                                     class="text-3xl text-[#606262]">
                                 </iconify-icon>
 
-                                <P class="uppercase font-archivo font-bold text-[#606262] ">Restore</P>
-                            </div>
+                                <P class="uppercase font-archivo font-bold text-[#606262] text-[16px] ">Restore</P>
+                            </button>
 
-                            <div class="w-full bg-[#BA1A1A] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
+                            <button class="whitespace-nowrap h-fit bg-[#BA1A1A] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
                                 <iconify-icon
                                     icon="mdi:garbage-can"
                                     class="text-3xl text-white">
                                 </iconify-icon>
                                 
-                                <P class="uppercase font-archivo font-bold text-white"> Delete Forever</P>
+                                <P class="uppercase font-archivo font-bold text-white text-[16px]"> Delete</P>
 
-                            </div>
+                            </button>
                         </div>
                     </div>
                 {% endfor %}

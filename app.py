@@ -31,9 +31,7 @@ def index():
     cursor.execute("""
         SELECT *
         FROM task
-        WHERE status_task = "Completed"
-        OR status_task = "Overdue"
-        OR status_task = "proses"
+        WHERE status_task = "proses"
         ORDER BY due_date
     """)
 
@@ -113,7 +111,8 @@ def completeTask():
     cursor.execute(
         """
         UPDATE task
-        SET status_task = 'Completed'
+        SET status_task = 'Completed',
+            date_completed = CURDATE()
         WHERE id = %s
     """, (id_complete,))
 

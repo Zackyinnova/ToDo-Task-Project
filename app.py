@@ -378,7 +378,24 @@ def restoreButton():
 
     return redirect(url_for('archivePage'))
 
+@app.route('/deleteArchive', methods = ['POST'])
+def deleteArchive():
 
+    cursor = db.cursor()
+
+    id_task = request.form.get('task_id')
+
+    cursor.execute(
+        """
+        DELETE FROM task
+        WHERE id = %s
+
+    """,(id_task,))
+
+    db.commit()
+    cursor.close()
+
+    return redirect(url_for('archivePage'))
 
 
 

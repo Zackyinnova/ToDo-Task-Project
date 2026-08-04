@@ -131,8 +131,8 @@
 
                         <!--Right-->
 
-                        <div class="flex flex-row gap-4 items-center">
-                            <form action="/restoreButton" method="POST">
+                        <div class="flex flex-row gap-4 items-center border-4 border-black">
+                            <form action="/restoreButton" method="POST" >
                                 <input type="hidden" name="task_id" value="{{ item.id}}" >
                                 <button  class="whitespace-nowrap h-fit bg-[#DEDEDE] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
                             
@@ -146,16 +146,20 @@
                                 </button>
                             </form>
 
-                            <button class="whitespace-nowrap h-fit bg-[#BA1A1A] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
-                                
-                                <iconify-icon
-                                    icon="mdi:garbage-can"
-                                    class="text-3xl text-white">
-                                </iconify-icon>
-                                
-                                <P class="uppercase font-archivo font-bold text-white text-[16px]"> Delete</P>
+                            <form action="/deleteArchive" method="POST">
+                                <input type="hidden" name="task_id" value="{{ item.id}}" >
+                                <button class="whitespace-nowrap h-fit bg-[#BA1A1A] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
+                                    
+                                    <iconify-icon
+                                        icon="mdi:garbage-can"
+                                        class="text-3xl text-white">
+                                    </iconify-icon>
+                                    
+                                    <P class="uppercase font-archivo font-bold text-white text-[16px]"> Delete</P>
 
-                            </button>
+                                </button>
+
+                            </form>
                         </div>
                     </div>
                 {% endfor %}

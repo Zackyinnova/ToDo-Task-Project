@@ -132,16 +132,22 @@
                         <!--Right-->
 
                         <div class="flex flex-row gap-4 items-center">
-                            <button class="whitespace-nowrap h-fit bg-[#DEDEDE] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
-                                <iconify-icon
-                                    icon="tabler:restore"
-                                    class="text-3xl text-[#606262]">
-                                </iconify-icon>
+                            <form action="/restoreButton" method="POST">
+                                <input type="hidden" name="task_id" value="{{ item.id}}" >
+                                <button  class="whitespace-nowrap h-fit bg-[#DEDEDE] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
+                            
 
-                                <P class="uppercase font-archivo font-bold text-[#606262] text-[16px] ">Restore</P>
-                            </button>
+                                    <iconify-icon
+                                        icon="tabler:restore"
+                                        class="text-3xl text-[#606262]">
+                                    </iconify-icon>
+
+                                    <P class="uppercase font-archivo font-bold text-[#606262] text-[16px] ">Restore</P>
+                                </button>
+                            </form>
 
                             <button class="whitespace-nowrap h-fit bg-[#BA1A1A] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
+                                
                                 <iconify-icon
                                     icon="mdi:garbage-can"
                                     class="text-3xl text-white">

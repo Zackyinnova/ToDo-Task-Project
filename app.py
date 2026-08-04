@@ -32,6 +32,7 @@ def index():
         SELECT *
         FROM task
         WHERE status_task = "proses"
+            OR status_task = "restore"
         ORDER BY due_date
     """)
 
@@ -136,7 +137,7 @@ def update_overdue_task():
         UPDATE task
         SET status_task = 'Overdue'
         WHERE due_date < CURDATE()
-        AND status_task != 'Completed'
+        AND status_task NOT IN ('Completed', 'restore')
     """)
 
     db.commit()
@@ -343,7 +344,7 @@ def archivePage():
     cursor.execute("""
         SELECT *
         FROM task
-        WHERE status_task != "proses"
+        WHERE status_task NOT IN ("proses", "restore")
     """)
 
     archiveTask = cursor.fetchall()
@@ -355,6 +356,33 @@ def archivePage():
         "ArcivePage.html",
         archiveTask = archiveTask
     )
+
+@app.route('/restoreButton' , methods=['POST'])
+def restoreButton():
+
+    cursor = db.cursor()
+
+    id_task = request.form.get('task_id')
+
+    cursor.execute(
+        """
+        UPDATE task
+        SET status_task = 'restore', 
+            due_date = DATE_ADD(CURDATE(), INTERVAL 3 DAY)
+        WHERE id = %s
+    """, (id_task,)
+    )
+
+    db.commit()
+    cursor.close()
+
+    return redirect(url_for('archivePage'))
+
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -217,7 +217,7 @@
     </footer>
 
     <!--Overlay add task-->
-    <div id="overlay-addtask" class="hidden bg-black/55 w-full h-full fixed top-0 p-6 md:p-20 justify-center items-center">
+    <div id="overlay-addtask" class="hidden z-[60] bg-black/55 w-full h-full fixed top-0 p-6 md:p-20 justify-center items-center">
         <div class="border-4 flex flex-col gap-8 border-black bg-[#FFF9ED] w-full md:w-[46%] p-8 text-10 font-anton shadow-[4px_4px_0px_0px_#000] ">
 
             <div class=" w-full">
@@ -310,25 +310,6 @@
 
     <div class="fixed md:hidden bottom-0 left-0 right-0 px-6 py-4 h-24 border-t-4 border-black bg-[#FFF9ED] z-50">
 
-        <!-- Tombol Add -->
-        <button
-            class="absolute left-1/2 -translate-x-1/2 -top-8
-                w-16 h-20
-                flex flex-col items-center justify-center
-                bg-[#FFDD00]
-                border-4 border-black
-                shadow-[6px_6px_0px_0px_#000]">
-
-            <iconify-icon
-                icon="material-symbols:add-rounded"
-                class="text-3xl">
-            </iconify-icon>
-
-            <span class="text-xs font-space font-bold uppercase">
-                Add
-            </span>
-        </button>
-
         <!-- Menu -->
         <div class="h-full flex justify-around items-end pb-3">
 
@@ -336,57 +317,60 @@
                 <div class="flex flex-col items-center gap-1 opacity-50">
                     <iconify-icon
                         icon="material-symbols:checklist-rounded"
-                        class="text-2xl text-[#6D5E00]">
+                        class="text-2xl">
                     </iconify-icon>
 
-                    <span class="text-xs font-space text-[#6D5E00] font-bold uppercase">
+                    <span class="text-xs font-space font-bold uppercase">
                         Task
                     </span>
                 </div>
             </a>
 
             <a href="/statPage">
-                <div class="flex flex-col items-center gap-1">
+                <div class="flex flex-col items-center gap-1 opacity-50">
                     <iconify-icon
                         icon="gridicons:stats"
-                        class="text-2xl">
+                        class="text-2xl ">
                     </iconify-icon>
 
-                    <span class="text-xs font-space font-bold uppercase">
+                    <span class="text-xs font-space  font-bold uppercase">
                         Stats
                     </span>
                 </div>
             </a>
 
-            <!-- Spacer supaya Add punya ruang -->
-            <div class="w-16"></div>
 
-            <div class="flex flex-col items-center gap-1 opacity-50">
-                <iconify-icon
-                    icon="material-symbols:category-outline-rounded"
-                    class="text-2xl">
-                </iconify-icon>
+            <a href="/categories"> 
+                <div class="flex flex-col items-center gap-1">
+                    <iconify-icon
+                        icon="material-symbols:category-outline-rounded"
+                        class="text-2xl text-[#6D5E00]">
+                    </iconify-icon>
 
-                <span class="text-xs font-space font-bold uppercase">
-                    Cats
-                </span>
-            </div>
+                    <span class="text-xs font-space text-[#6D5E00] font-bold uppercase">
+                        Cats
+                    </span>
+                </div>
+            </a>
 
-            <div class="flex flex-col items-center gap-1 opacity-50">
-                <iconify-icon
-                    icon="material-symbols:archive-outline-rounded"
-                    class="text-2xl">
-                </iconify-icon>
+            <a href="/archivePage">
+                <div class="flex flex-col items-center gap-1 opacity-50">
+                    <iconify-icon
+                        icon="material-symbols:archive-outline-rounded"
+                        class="text-2xl">
+                    </iconify-icon>
 
-                <span class="text-xs font-space font-bold uppercase">
-                    Archive
-                </span>
-            </div>
+                    <span class="text-xs font-space font-bold uppercase">
+                        Archive
+                    </span>
+                </div>
+            </a>
 
         </div>
 
     </div>
 
     <script src="{{ url_for('static', filename='js/categories.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

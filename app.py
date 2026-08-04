@@ -196,6 +196,14 @@ def statPage():
 
     total_overdue = cursor.fetchone()
 
+    cursor.execute("""
+        SELECT *
+        FROM categories
+        ORDER BY category_name
+    """)
+
+    categories = cursor.fetchall()
+
 
 
     return render_template(
@@ -203,7 +211,8 @@ def statPage():
         result_total = result_total,
         total_pending = total_pending,
         total_completed = total_completed,
-        total_overdue = total_overdue
+        total_overdue = total_overdue,
+        categories = categories
     )
 
 @app.route("/api/chart/weekly")
@@ -268,9 +277,18 @@ def categories_page():
 
     total_category = cursor.fetchall()
 
+    cursor.execute("""
+        SELECT *
+        FROM categories
+        ORDER BY category_name
+    """)
+
+    categories = cursor.fetchall()
+
     return render_template(
         "categories.html",
-        total_category = total_category
+        total_category = total_category,
+        categories = categories
         )
 
 @app.route('/submitCategory', methods=['POST'])
@@ -349,12 +367,21 @@ def archivePage():
 
     archiveTask = cursor.fetchall()
 
+    cursor.execute("""
+        SELECT *
+        FROM categories
+        ORDER BY category_name
+    """)
+
+    categories = cursor.fetchall()
+
     cursor.close()
     
 
     return render_template(
         "ArcivePage.html",
-        archiveTask = archiveTask
+        archiveTask = archiveTask,
+        categories = categories
     )
 
 @app.route('/restoreButton' , methods=['POST'])

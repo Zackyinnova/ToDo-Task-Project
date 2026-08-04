@@ -83,16 +83,16 @@
         </section>
         
         <section>
-            <div class="max-w-7xl flex gap-4 mx-auto px-5 md:px-8 lg:px-12">
-                <button class="border-4 border-black px-8 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+            <div class="max-w-7xl flex  gap-4 mx-auto px-5  md:px-8 lg:px-12">
+                <button class="border-4 border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
                     <p class="font-anton text-[24px]">May</p>
                 </button>
 
-                <button class="border-4  border-black px-8 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
                     <p class="font-anton text-[24px]">April</p>
                 </button>
 
-                <button class="border-4  border-black px-8 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
                     <p class="font-anton text-[24px]">june</p>
                 </button>
             </div>
@@ -131,10 +131,10 @@
 
                         <!--Right-->
 
-                        <div class="flex flex-row gap-4 items-center border-4 border-black">
-                            <form action="/restoreButton" method="POST" >
+                        <div class="flex flex-col gap-4 items-center md:flex-row  ">
+                            <form action="/restoreButton" method="POST" class="w-full" >
                                 <input type="hidden" name="task_id" value="{{ item.id}}" >
-                                <button  class="whitespace-nowrap h-fit bg-[#DEDEDE] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
+                                <button  class="w-full whitespace-nowrap h-fit bg-[#DEDEDE] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
                             
 
                                     <iconify-icon
@@ -146,9 +146,9 @@
                                 </button>
                             </form>
 
-                            <form action="/deleteArchive" method="POST">
+                            <form action="/deleteArchive" method="POST" class="w-full"  >
                                 <input type="hidden" name="task_id" value="{{ item.id}}" >
-                                <button class="whitespace-nowrap h-fit bg-[#BA1A1A] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
+                                <button class="w-full whitespace-nowrap h-fit bg-[#BA1A1A] flex justify-center items-center px-6 py-2 gap-2 border-4 border-black shadow-[4px_4px_0px_0px_#000]">
                                     
                                     <iconify-icon
                                         icon="mdi:garbage-can"

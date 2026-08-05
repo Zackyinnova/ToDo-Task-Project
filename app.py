@@ -4,7 +4,7 @@ from flask import session
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask import request, flash
 import random
-from datetime import date, timedelta
+from datetime import date, timedelta,datetime
 from flask_apscheduler import APScheduler
 import json
 
@@ -357,15 +357,15 @@ def deleteCategory():
 @app.route('/archivePage')
 def archivePage():
 
+    now = datetime.now()
+
+    current_idx = now.month
+    last_idx = (now.month - 2) % 12 + 1
+    two_ago_idx = (now.month - 3) % 12 + 1
+
+
     cursor = db.cursor(dictionary=True)
-
-    cursor.execute("""
-        SELECT *
-        FROM task
-        WHERE status_task NOT IN ("proses", "restore")
-    """)
-
-    archiveTask = cursor.fetchall()
+ 
 
     cursor.execute("""
         SELECT *
@@ -374,14 +374,33 @@ def archivePage():
     """)
 
     categories = cursor.fetchall()
+    
+
+    cursor.execute("""
+        SELECT *
+        FROM task
+        WHERE status_task NOT IN ('proses', 'restore')
+        AND MONTH(due_date) IN (%s, %s, %s)
+        AND YEAR(due_date) = YEAR(CURDATE())
+        ORDER BY due_date DESC
+    """, (current_idx, last_idx, two_ago_idx))
+
+    archiveTask = cursor.fetchall()
 
     cursor.close()
+
+    months_id = ["Januari","Februari","Maret","April","Mei","Juni",
+             "Juli","Agustus","September","Oktober","November","Desember"]
     
 
     return render_template(
         "ArcivePage.html",
-        archiveTask = archiveTask,
-        categories = categories
+        categories = categories,
+        archiveTask=archiveTask,
+        months_id=months_id,
+        current_idx=current_idx,
+        last_idx=last_idx,
+        two_ago_idx=two_ago_idx
     )
 
 @app.route('/restoreButton' , methods=['POST'])

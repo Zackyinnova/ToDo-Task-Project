@@ -83,19 +83,19 @@
         </section>
         
         <section>
-            <div class="max-w-7xl flex  gap-4 mx-auto px-5  md:px-8 lg:px-12">
-                <button class="border-4 border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
-                    <p class="font-anton text-[24px]">May</p>
-                </button>
+                <div class="max-w-7xl flex  gap-4 mx-auto px-5  md:px-8 lg:px-12">
+                    <button class="border-4 border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                        <p class="font-anton text-[24px]">{{ months_id[two_ago_idx - 1] }}</p>
+                    </button>
 
-                <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
-                    <p class="font-anton text-[24px]">April</p>
-                </button>
+                    <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                        <p class="font-anton text-[24px]">{{ months_id[last_idx - 1] }}</p>
+                    </button>
 
-                <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
-                    <p class="font-anton text-[24px]">june</p>
-                </button>
-            </div>
+                    <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                        <p class="font-anton text-[24px]">{{ months_id[current_idx - 1] }}</p>
+                    </button>
+                </div>
         </section>
 
         <!-- task list-->

@@ -81,18 +81,21 @@
                 <h1 class="font-anton text-[64px] uppercase">Archive</h1>
             </div>
         </section>
-        
+
         <section>
                 <div class="max-w-7xl flex  gap-4 mx-auto px-5  md:px-8 lg:px-12">
-                    <button class="border-4 border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                    <button class="month-button border-4 border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]"
+                            data-month="{{ two_ago_idx }}">
                         <p class="font-anton text-[24px]">{{ months_id[two_ago_idx - 1] }}</p>
                     </button>
 
-                    <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                    <button class="month-button border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]"
+                            data-month="{{ last_idx }}">
                         <p class="font-anton text-[24px]">{{ months_id[last_idx - 1] }}</p>
                     </button>
 
-                    <button class="border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]">
+                    <button class="month-button border-4  border-black flex-1 py-3 bg-[#FFDD00] shadow-[4px_4px_0px_0px_#000]"
+                            data-month="{{ current_idx }}">
                         <p class="font-anton text-[24px]">{{ months_id[current_idx - 1] }}</p>
                     </button>
                 </div>
@@ -102,7 +105,8 @@
         <section>
             <div class="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex flex-col gap-4 max-h-[40vh] scrollbar-hide overflow-auto">
                 {%for item in archiveTask %}
-                    <div class="border-4 border-black p-6 flex flex-col gap-4 bg-[#FFFFFF] md:flex-row md:justify-between ">
+                    <div class="task-card border-4 border-black p-6 flex flex-col gap-4 bg-[#FFFFFF] md:flex-row md:justify-between "
+                            data-bulan="{{ item.bulan }}">
 
                         <!--Left-->
                         <div class=" flex flex-col gap-2">
@@ -362,6 +366,7 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/categories.js') }}"></script>
+
 
 </body>
 </html>

@@ -73,3 +73,55 @@ buttonGroups.forEach((group) => {
         });
     });
 });
+
+const monthButtons = document.querySelectorAll(".month-button");
+const taskCards = document.querySelectorAll(".task-card");
+
+function filterByMonth(month) {
+
+    taskCards.forEach(card => {
+
+        if (card.dataset.bulan === month) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+monthButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const selectedMonth = button.dataset.month;
+
+        // Reset semua tombol
+        monthButtons.forEach(btn => {
+            btn.classList.remove("bg-black", "text-white");
+            btn.classList.add("bg-[#FFDD00]");
+        });
+
+        // Tombol aktif
+        button.classList.remove("bg-[#FFDD00]");
+        button.classList.add("bg-black", "text-white");
+
+        filterByMonth(selectedMonth);
+
+    });
+
+});
+
+// Otomatis tampilkan bulan sekarang saat halaman dibuka
+window.addEventListener("DOMContentLoaded", () => {
+
+    const currentButton = document.querySelector(
+        `[data-month="{{ current_idx }}"]`
+    );
+
+    if (currentButton) {
+        currentButton.click();
+    }
+
+});

@@ -377,7 +377,8 @@ def archivePage():
     
 
     cursor.execute("""
-        SELECT *
+        SELECT *,
+            MONTH(due_date) AS bulan
         FROM task
         WHERE status_task NOT IN ('proses', 'restore')
         AND MONTH(due_date) IN (%s, %s, %s)

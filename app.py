@@ -82,6 +82,9 @@ def submitTask():
 
     return redirect(url_for('index'))
 
+
+    
+
 @app.route('/delete-task' , methods = ['POST'])
 def deleteTask():
     cursor = db.cursor()
@@ -168,7 +171,8 @@ def statPage():
         """
         SELECT COUNT(*) AS total
         from task
-        where status_task = 'proses';
+        where status_task = 'proses' 
+        OR status_task = 'restore';
     """
     )
 

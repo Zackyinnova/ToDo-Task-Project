@@ -52,6 +52,9 @@ overAddTask.addEventListener("click", (e) =>{
     }
 });
 
+
+
+
 // Category
 const categoryButtons = document.querySelectorAll(".category-button");
 const categoryInput = document.getElementById("category");

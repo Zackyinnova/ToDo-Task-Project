@@ -197,9 +197,7 @@
                             </div>
 
                             <div class="flex flex-row gap-3 md:w-full">
-                                <button class="uppercase font-space text-[12px] font-bold w-full py-2 border-4 border-black bg-[#E2E2E2] shadow-[4px_4px_0px_0px_#000]">
-                                    edit
-                                </button>
+
                                 
                                 <form action="/delete-task" class="w-full" method="post">
                                     <input type="hidden" name="id_task" value="{{ item.id }}">
@@ -356,6 +354,7 @@
             </form>
         </div>
     </div>
+
 
     <div class="fixed md:hidden bottom-0 left-0 right-0 px-6 py-4 h-24 border-t-4 border-black bg-[#FFF9ED] z-50">
 

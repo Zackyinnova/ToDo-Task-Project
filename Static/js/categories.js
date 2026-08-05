@@ -125,3 +125,38 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+// =======================
+// CATEGORY INPUT
+// =======================
+
+const categoryButtons = document.querySelectorAll(".category-button");
+const categoryInput = document.getElementById("category");
+
+if (categoryInput) {
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            categoryInput.value = button.dataset.value;
+
+        });
+    });
+}
+
+
+// =======================
+// PRIORITY INPUT
+// =======================
+
+const priorityButtons = document.querySelectorAll(".priority-button");
+const priorityInput = document.getElementById("priority");
+
+if (priorityInput) {
+    priorityButtons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            priorityInput.value = button.dataset.value;
+
+        });
+    });
+}
